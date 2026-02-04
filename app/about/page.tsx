@@ -21,16 +21,17 @@ export default function AboutPage() {
 					<motion.div variants={fadeIn('right', 0.3)} className="space-y-6">
 						<h1 className="text-4xl font-bold">About Me</h1>
 						<p className="text-lg text-muted-foreground">
-							I am a passionate engineering student with a focus on innovation and problem-solving.
-							My academic journey has equipped me with strong technical skills and a deep understanding
-							of engineering principles.
+							I am a passionate electrical engineering student at UC Irvine with a focus on embedded systems,
+							robotics, and automation. My academic journey and hands-on projects have equipped me with
+							strong technical skills in circuit design, programming, and hardware integration.
 						</p>
 						<div className="space-y-4">
 							<h2 className="text-2xl font-semibold">My Journey</h2>
 							<p className="text-muted-foreground">
-								Throughout my academic career, I've been involved in various projects that have
-								helped me develop practical skills and theoretical knowledge. I believe in
-								continuous learning and staying updated with the latest technological advancements.
+								From founding an e-commerce business that generated over $120,000 in sales to participating
+								in NASA's Community College Aerospace Scholars program, I've developed a unique blend of
+								entrepreneurial and technical skills. Currently, I'm leading a team to build a 6-axis robotic
+								arm and continuously pushing the boundaries of what's possible with embedded systems.
 							</p>
 						</div>
 						<Button className="mt-6" asChild>
@@ -62,8 +63,8 @@ export default function AboutPage() {
 							<CardContent className="p-6">
 								<h3 className="text-xl font-semibold mb-4">Education</h3>
 								<p className="text-muted-foreground">
-									Currently pursuing a Bachelor's degree in Engineering with a focus on
-									practical applications and innovative solutions.
+									Currently pursuing a B.S. in Electrical Engineering at UC Irvine (3.51 GPA),
+									with prior studies at Foothill College (3.82 GPA).
 								</p>
 							</CardContent>
 						</Card>
@@ -74,8 +75,8 @@ export default function AboutPage() {
 							<CardContent className="p-6">
 								<h3 className="text-xl font-semibold mb-4">Experience</h3>
 								<p className="text-muted-foreground">
-									Gained valuable experience through internships and projects, working
-									with cutting-edge technologies and methodologies.
+									Founded SP Logistics generating $120K+ in sales, and participated in
+									NASA NCAS program leading research on lunar mobility systems.
 								</p>
 							</CardContent>
 						</Card>
@@ -86,8 +87,8 @@ export default function AboutPage() {
 							<CardContent className="p-6">
 								<h3 className="text-xl font-semibold mb-4">Skills</h3>
 								<p className="text-muted-foreground">
-									Proficient in various engineering tools and technologies, with a strong
-									foundation in problem-solving and analytical thinking.
+									Proficient in C++, Python, Verilog, and embedded systems (Arduino, Raspberry Pi).
+									Experienced with PCB design, oscilloscopes, and soldering.
 								</p>
 							</CardContent>
 						</Card>

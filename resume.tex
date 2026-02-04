@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}       % set main text size
+\usepackage[letterpaper,                % set paper size to letterpaper. change to a4paper for resumes outside of North America
+top=0.5in,                          % specify top page margin
+bottom=0.5in,                       % specify bottom page margin
+left=0.5in,                         % specify left page margin
+right=0.5in]{geometry}              % specify right page margin
+                       
+\usepackage{XCharter}               % set font. comment this line out if you want to use the default LaTeX font Computer Modern
+\usepackage[T1]{fontenc}            % output encoding
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage{enumitem}               % enable lists for bullet points: itemize and \item
+\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{titlesec}               % enable section title customization
+\raggedright                        % disable text justification
+\pagestyle{empty}                   % disable page numbering
+
+% ensure PDF output will be all-Unicode and machine-readable
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% format section headings: bolding, size, white space above and below
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
+
+% format bullet points: size, white space above and below, white space between bullets
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\setlist[itemize]{itemsep=-2pt, leftmargin=12pt, topsep=7pt} %%% Test various topsep values to fix vertical spacing errors
+
+% resume starts here
+\begin{document}
+
+% name
+\centerline{\Huge Samuel Phan}
+
+\vspace{5pt}
+
+% contact information
+\centerline{\href{mailto:samuelphan21@gmail.com}{samuelphan21@gmail.com} | %\href{https://www.linkedin.com/in/samthephan/}{LinkedIn} |
+\href{tel:1408332906}{+1 408-833-2906} | San Jose, CA}
+
+\vspace{-10pt}
+
+% education section
+\section*{Education}
+\textbf{University of California, Irvine} \hfill Expected June 2027 \\
+B.S. Electrical Engineering, GPA: 3.51/4.00 \\
+\vspace{-6.5pt}
+\begin{itemize}
+  \item \textit{Relevant Coursework}: Circuit Analysis II, Discrete Time-Signals \& Systems, Intro to Digital Logic Design Lab
+\end{itemize}
+\vspace{-6.5pt}
+\textbf{Foothill College}   \hfill June 2025 \\
+Electrical Engineering Transfer, GPA: 3.82/4.00
+
+\vspace {-6.5pt}
+
+%projects section
+\section*{Projects}
+\textbf{Arctos 6-Axis Robotic Arm} \hfill Jan 2026 -- Present \\
+
+\vspace{-9pt}
+\begin{itemize}
+  \item Initiated project management for a team of 7 members using Notion to plan and manage 3D printing schedules, parts inventory, and build progress
+  \item Will assemble a 600 mm tall robotic arm with 3D printed parts and a custom end effector
+  \item Will program the Arduino Mega with Arctos Studio/ROS2 to interface with sensors, motors, and control electronics
+
+\end{itemize}
+
+
+\textbf{Custom Ender 3 V2} \hfill Jan 2025 -- Jun 2025  \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Boosted print speed 5x over stock performance by modifying a Creality Ender 3 V2 with upgraded hotend, extruder, and mainboard
+  \item Enabled remote monitoring and zero downtime by integrating a Raspberry Pi running Klipper firmware
+  \item Designed mounts using CAD for an auto bed-leveling sensor, upgraded heater, and additional cooling fans
+\end{itemize}
+
+\textbf{\href{https://github.com/blayyd/dart-nike-gen/tree/main}{Dart IO Nike Generator}} \hfill Feb 2021 -- Apr 2021 \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Developed a browser automation tool in Go to mass-generate Nike accounts, increasing raffle entry success compared to manual entry methods
+  \item Reduced total account generation time by 10x using Go’s concurrency features
+  \item Ensured 100\% account uniqueness by integrating proxy rotation and SMS API verification.
+\end{itemize}
+
+
+\vspace{-6.5pt}
+
+%experience section
+\section*{Experience}
+\textbf{Founder,} {SP Logistics -- San Jose, CA} \hfill Oct 2019 -- Dec 2024 \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Founded and scaled an online arbitrage business by sourcing and reselling limited, high-demand products, generating over \$120,000 in total sales
+  \item Leveraged data analytics to optimize pricing strategies and maximize profit margins
+  \item Built automation tools in Python that cut inventory sourcing time by 40\%
+  \item Collaborated with a network of sellers to share insights and strategies that improved collective sales outcomes
+\end{itemize}
+
+\vspace{-18.5pt}
+
+% extracurriculars section
+\section*{Extracurriculars}
+\textbf{NASA Community College Aerospace Scholars (NCAS) Missions 1 \& 2 } \hfill Jan 2025 -- Apr 2025 \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Led research on mechanical systems and mobility solutions for a simulated lunar base, contributing to a team design reviewed by NASA staff
+  \item Advised team during meetings and provided feedback on budget decisions
+  \item Completed a 5-week online curriculum on NASA missions and STEM career pathways
+\end{itemize}
+
+
+
+% \textbf{Project Title} \hfill \href{https://www.hardwareishard.net/portfolio-database}{blog.com/projectname} \\
+% \vspace{-9pt}
+% \begin{itemize}
+%   \item Resume checklist: \url{https://old.reddit.com/r/EngineeringResumes/wiki/checklist}
+%   \item Google Docs version of this template: \url{https://docs.google.com/document/d/1MBvhATv8y-ESORopRoLSZ3f3HjkM_Qa_f8fIHAEqgnI/edit}
+% \end{itemize}
+
+% alternate formatting for projects section
+% \section*{Projects}
+% \begin{itemize}
+%   \item \textbf{QuantSoftware Toolkit:} Open source Python library for data analysis and machine learning for finance
+%   \item \textbf{GitHub Visualization:} Data visualization of Git Log data using D3 to analyze project trends over time
+%   \item \textbf{Recommendation System:} Music and movie recommender systems using collaborative filtering on public datasets
+%   \item \textbf{Mac Setup:} Book that gives step by step instructions on setting up developer environment on Mac OS
+% \end{itemize}
+
+\vspace{-18.5pt}
+% skills section
+\section*{Skills}
+\textbf{Design Tools:} LTspice, Vivado, KiCad (Schematics/PCB Design), Microsoft Visual Studio, CAD, GitHub \\
+\textbf{Programming:} C++, Verilog, Python, Go, MATLAB, LaTeX \\
+\textbf{Embedded Systems:} Arduino, Raspberry Pi, ESP8266 \\
+\textbf{Lab Equipment:} Oscilloscope, Function Generator, Multimeter, Soldering
+
+\end{document}

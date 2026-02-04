@@ -16,7 +16,7 @@ export function AboutPreview() {
 			<div className="container px-4">
 				<SectionHeader
 					title="About Me"
-					description="A passionate engineer dedicated to solving complex problems through innovative solutions."
+					description="A passionate electrical engineering student dedicated to building innovative solutions with embedded systems and robotics."
 				/>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
@@ -43,36 +43,36 @@ export function AboutPreview() {
 						viewport={{ once: true }}
 						className="flex flex-col justify-center"
 					>
-						<h3 className="text-2xl font-bold mb-4">Professional Engineer</h3>
+						<h3 className="text-2xl font-bold mb-4">Electrical Engineer</h3>
 						<p className="text-muted-foreground mb-6">
-							I'm a dedicated engineering student with a passion for innovation and problem-solving.
-							My academic journey has equipped me with strong technical skills and a deep understanding
-							of engineering principles that I apply to real-world challenges.
+							I'm an electrical engineering student at UC Irvine with a passion for embedded systems,
+							robotics, and automation. From building a 6-axis robotic arm to customizing 3D printers
+							with Klipper firmware, I love turning ideas into working hardware.
 						</p>
 
 						<div className="grid grid-cols-2 gap-4 mb-6">
 							<Card className="card-gradient">
 								<CardContent className="p-4">
 									<h4 className="font-semibold">Education</h4>
-									<p className="text-sm text-muted-foreground">B.S. Mechanical Engineering</p>
+									<p className="text-sm text-muted-foreground">B.S. Electrical Engineering</p>
 								</CardContent>
 							</Card>
 							<Card className="card-gradient">
 								<CardContent className="p-4">
 									<h4 className="font-semibold">Experience</h4>
-									<p className="text-sm text-muted-foreground">3+ Years</p>
+									<p className="text-sm text-muted-foreground">5+ Years</p>
 								</CardContent>
 							</Card>
 							<Card className="card-gradient">
 								<CardContent className="p-4">
 									<h4 className="font-semibold">Projects</h4>
-									<p className="text-sm text-muted-foreground">10+ Completed</p>
+									<p className="text-sm text-muted-foreground">3+ Completed</p>
 								</CardContent>
 							</Card>
 							<Card className="card-gradient">
 								<CardContent className="p-4">
-									<h4 className="font-semibold">Awards</h4>
-									<p className="text-sm text-muted-foreground">5 Recognitions</p>
+									<h4 className="font-semibold">NASA</h4>
+									<p className="text-sm text-muted-foreground">NCAS Scholar</p>
 								</CardContent>
 							</Card>
 						</div>

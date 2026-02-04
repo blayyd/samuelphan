@@ -78,7 +78,7 @@ export function SkillsPreview() {
 					>
 						<Card>
 							<CardContent className="p-6">
-								<h3 className="text-xl font-bold mb-4">Software Proficiency</h3>
+								<h3 className="text-xl font-bold mb-4">Programming</h3>
 								<div className="space-y-4">
 									{topSoftwareSkills.map((skill, index) => (
 										<div key={index}>
