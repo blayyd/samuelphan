@@ -68,7 +68,6 @@
 engineer_portfolio/
 ├─ app/
 │  ├─ about/
-│  ├─ blog/
 │  ├─ certificates/
 │  ├─ contact/
 │  ├─ education/

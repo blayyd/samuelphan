@@ -32,10 +32,6 @@ export const siteConfig = {
 			href: '/certificates',
 		},
 		{
-			title: 'Blog',
-			href: '/blog',
-		},
-		{
 			title: 'Contact',
 			href: '/contact',
 		},
@@ -235,42 +231,6 @@ export const skills: Skill[] = [
 
 	// Embedded Systems (as language category for display)
 	{ name: 'Arduino', level: 9, category: 'language' },
-	{ name: 'Raspberry Pi', level: 8, category: 'language' },
-	{ name: 'ESP8266', level: 7, category: 'language' },
-];
-
-export type BlogPost = {
-	title: string;
-	excerpt: string;
-	date: string;
-	author: string;
-	image: string;
-	slug: string;
-};
-
-export const blogPosts: BlogPost[] = [
-	{
-		title: 'Building a 6-Axis Robotic Arm from Scratch',
-		excerpt: 'My journey building the Arctos robotic arm with 3D printed parts and Arduino control systems.',
-		date: 'Jan 15, 2026',
-		author: 'Samuel Phan',
-		image: 'https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg',
-		slug: 'building-robotic-arm',
-	},
-	{
-		title: 'Optimizing 3D Printing with Klipper Firmware',
-		excerpt: 'How I achieved 5x faster print speeds on my Ender 3 V2 using Klipper and hardware upgrades.',
-		date: 'Jun 10, 2025',
-		author: 'Samuel Phan',
-		image: 'https://images.pexels.com/photos/3913025/pexels-photo-3913025.jpeg',
-		slug: 'klipper-3d-printing',
-	},
-	{
-		title: 'Lessons from NASA NCAS Program',
-		excerpt: 'What I learned about aerospace engineering and team collaboration during the NASA Scholars program.',
-		date: 'Apr 20, 2025',
-		author: 'Samuel Phan',
-		image: 'https://images.pexels.com/photos/2156/sky-earth-space-working.jpg',
-		slug: 'nasa-ncas-experience',
-	},
+	{ name: 'Raspberry Pi' , level: 8 , category: 'language' } ,
+	{ name: 'ESP8266' , level: 7 , category: 'language' } ,
 ];

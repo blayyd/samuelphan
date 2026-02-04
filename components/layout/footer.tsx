@@ -35,7 +35,6 @@ export function Footer() {
 		{
 			title: 'Connect',
 			links: [
-				{ title: 'Blog', href: '/blog' },
 				{ title: 'Contact', href: '/contact' },
 				{ title: 'Resume', href: '/resume.pdf', download: true },
 			],
