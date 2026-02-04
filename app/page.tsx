@@ -13,12 +13,16 @@ export default function Home() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
-		// Simulate loading time
-		const timer = setTimeout(() => {
+		const handleLoad = () => {
 			setIsLoading(false);
-		}, 800);
+		};
 
-		return () => clearTimeout(timer);
+		if (document.readyState === 'complete') {
+			setIsLoading(false);
+		} else {
+			window.addEventListener('load', handleLoad);
+			return () => window.removeEventListener('load', handleLoad);
+		}
 	}, []);
 
 	return (
