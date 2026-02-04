@@ -37,7 +37,7 @@ export function Footer() {
 			links: [
 				{ title: 'Blog', href: '/blog' },
 				{ title: 'Contact', href: '/contact' },
-				{ title: 'Resume', href: '#', download: true },
+				{ title: 'Resume', href: '/resume.pdf', download: true },
 			],
 		},
 	];
@@ -48,10 +48,10 @@ export function Footer() {
 				<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 					<div className="md:col-span-1">
 						<Link href="/" className="inline-block">
-							<span className="text-2xl font-bold text-gradient">Portfolio</span>
+							<span className="text-2xl font-bold text-gradient">Samuel Phan</span>
 						</Link>
 						<p className="mt-4 text-sm text-muted-foreground">
-							A professional portfolio showcasing my skills, projects, and achievements in engineering.
+							A professional portfolio showcasing my skills, projects, and achievements in electrical engineering.
 						</p>
 						<div className="mt-6 flex flex-wrap gap-3">
 							{socialLinks.map((link, index) => (
@@ -90,7 +90,7 @@ export function Footer() {
 
 				<div className="flex flex-col sm:flex-row items-center justify-between text-sm">
 					<p className="text-muted-foreground">
-						© {currentYear} Engineering Portfolio. All rights reserved.
+						© {currentYear} Samuel Phan. All rights reserved.
 					</p>
 					<div className="mt-4 sm:mt-0 flex gap-4">
 						<Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
