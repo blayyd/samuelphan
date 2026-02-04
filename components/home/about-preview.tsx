@@ -40,16 +40,11 @@ export function AboutPreview() {
 								arm and continuously pushing the boundaries of what's possible with embedded systems.
 							</p>
 						</div>
-						<Button className="mt-6" asChild>
-							<a href="/resume.pdf" download>
-								Download CV <ArrowDownCircle className="ml-2 h-4 w-4" />
-							</a>
-						</Button>
 					</motion.div>
 
 					<motion.div variants={fadeIn('left', 0.3)} className="relative h-[500px]">
 						<Image
-							src="/profilepic.jpg"
+							src="/profilepic.jpeg"
 							alt="Samuel Phan's profile photo"
 							fill
 							className="object-cover rounded-lg"
