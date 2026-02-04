@@ -112,7 +112,7 @@ export const projects: Project[] = [
 			
 			The arm features custom-designed end effectors and is powered by an Arduino Mega interfacing with various sensors and stepper motors.
 		`,
-		image: 'https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg',
+		image: '/arctos.png',
 		tags: ['Arduino', 'ROS2', '3D Printing', 'Robotics', 'Project Management'],
 		link: '#',
 		repo: '#',
