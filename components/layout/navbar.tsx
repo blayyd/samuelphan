@@ -48,7 +48,7 @@ export function Navbar() {
 							whileHover={{ scale: 1.05 }}
 							className="font-bold text-2xl text-gradient"
 						>
-							Portfolio
+							Samuel Phan
 						</motion.div>
 					</Link>
 					<nav className="hidden md:flex gap-6">
@@ -77,7 +77,7 @@ export function Navbar() {
 						<SheetContent className="flex flex-col p-6">
 							<div className="flex items-center justify-between mb-8">
 								<Link href="/" className="flex items-center space-x-2">
-									<span className="font-bold text-2xl text-gradient">Portfolio</span>
+									<span className="font-bold text-2xl text-gradient">Samuel Phan</span>
 								</Link>
 							</div>
 							<nav className="flex flex-col gap-4">

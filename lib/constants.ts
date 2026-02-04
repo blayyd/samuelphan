@@ -43,10 +43,6 @@ export const siteConfig = {
 	links: {
 		github: 'https://github.com/blayyd',
 		linkedin: 'https://linkedin.com/in/samthephan',
-		twitter: 'https://twitter.com/',
-		facebook: 'https://facebook.com/',
-		instagram: 'https://instagram.com/',
-		whatsapp: 'https://wa.me/14088332906',
 		email: 'mailto:samuelphan21@gmail.com',
 		phone: 'tel:+14088332906',
 	},
