@@ -8,10 +8,6 @@ export const siteConfig = {
 			href: '/',
 		},
 		{
-			title: 'About',
-			href: '/about',
-		},
-		{
 			title: 'Education',
 			href: '/education',
 		},

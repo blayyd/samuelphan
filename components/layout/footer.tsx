@@ -17,26 +17,26 @@ export function Footer() {
 
 	const navColumns = [
 		{
-			title: 'About',
+			title: 'Academic',
 			links: [
-				{ title: 'About Me', href: '/about' },
 				{ title: 'Education', href: '/education' },
 				{ title: 'Skills', href: '/skills' },
+				{ title: 'Certificates', href: '/certificates' },
 			],
 		},
 		{
-			title: 'Work',
+			title: 'Experience',
 			links: [
-				{ title: 'Experience', href: '/experience' },
-				{ title: 'Projects', href: '/projects' },
-				{ title: 'Certificates', href: '/certificates' },
+				{ title: 'Work Experience', href: '/experience' },
+				{ title: 'Portfolio Projects', href: '/projects' },
+				{ title: 'Resume', href: '/resume.pdf', download: true },
 			],
 		},
 		{
 			title: 'Connect',
 			links: [
+				{ title: 'Home', href: '/' },
 				{ title: 'Contact', href: '/contact' },
-				{ title: 'Resume', href: '/resume.pdf', download: true },
 			],
 		},
 	];

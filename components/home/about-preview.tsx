@@ -3,87 +3,104 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowDownCircle } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/ui/section-header';
 import { Card, CardContent } from '@/components/ui/card';
-import { fadeIn } from '@/lib/motion';
+import { fadeIn, staggerContainer } from '@/lib/motion';
 
 export function AboutPreview() {
 	return (
-		<section className="py-16 md:py-24">
+		<section className="py-16 md:py-24" id="about">
 			<div className="container px-4">
-				<SectionHeader
-					title="About Me"
-					description="A passionate electrical engineering student dedicated to building innovative solutions with embedded systems and robotics."
-				/>
+				<motion.div
+					variants={staggerContainer()}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true }}
+					className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+				>
+					<motion.div variants={fadeIn('right', 0.3)} className="space-y-6">
+						<SectionHeader
+							title="About Me"
+							description="I am a passionate electrical engineering student at UC Irvine with a focus on embedded systems, robotics, and automation."
+							className="text-left md:text-left mx-0"
+						/>
+						<p className="text-lg text-muted-foreground">
+							My academic journey and hands-on projects have equipped me with
+							strong technical skills in circuit design, programming, and hardware integration.
+						</p>
+						<div className="space-y-4">
+							<h3 className="text-2xl font-semibold">My Journey</h3>
+							<p className="text-muted-foreground">
+								From founding an e-commerce business that generated over $120,000 in sales to participating
+								in NASA's Community College Aerospace Scholars program, I've developed a unique blend of
+								entrepreneurial and technical skills. Currently, I'm leading a team to build a 6-axis robotic
+								arm and continuously pushing the boundaries of what's possible with embedded systems.
+							</p>
+						</div>
+						<Button className="mt-6" asChild>
+							<a href="/resume.pdf" download>
+								Download CV <ArrowDownCircle className="ml-2 h-4 w-4" />
+							</a>
+						</Button>
+					</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-					<motion.div
-						variants={fadeIn('right', 0.3)}
-						initial="hidden"
-						whileInView="show"
-						viewport={{ once: true }}
-						className="relative h-[400px] rounded-lg overflow-hidden"
-					>
+					<motion.div variants={fadeIn('left', 0.3)} className="relative h-[500px]">
 						<Image
-							src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg"
-							alt="Engineer portrait"
+							src="/profilepic.jpg"
+							alt="Samuel Phan's profile photo"
 							fill
-							className="object-cover"
+							className="object-cover rounded-lg"
 							sizes="(max-width: 768px) 100vw, 50vw"
 						/>
 					</motion.div>
+				</motion.div>
 
-					<motion.div
-						variants={fadeIn('left', 0.3)}
-						initial="hidden"
-						whileInView="show"
-						viewport={{ once: true }}
-						className="flex flex-col justify-center"
-					>
-						<h3 className="text-2xl font-bold mb-4">Electrical Engineer</h3>
-						<p className="text-muted-foreground mb-6">
-							I'm an electrical engineering student at UC Irvine with a passion for embedded systems,
-							robotics, and automation. From building a 6-axis robotic arm to customizing 3D printers
-							with Klipper firmware, I love turning ideas into working hardware.
-						</p>
-
-						<div className="grid grid-cols-2 gap-4 mb-6">
-							<Card className="card-gradient">
-								<CardContent className="p-4">
-									<h4 className="font-semibold">Education</h4>
-									<p className="text-sm text-muted-foreground">B.S. Electrical Engineering</p>
-								</CardContent>
-							</Card>
-							<Card className="card-gradient">
-								<CardContent className="p-4">
-									<h4 className="font-semibold">Experience</h4>
-									<p className="text-sm text-muted-foreground">5+ Years</p>
-								</CardContent>
-							</Card>
-							<Card className="card-gradient">
-								<CardContent className="p-4">
-									<h4 className="font-semibold">Projects</h4>
-									<p className="text-sm text-muted-foreground">3+ Completed</p>
-								</CardContent>
-							</Card>
-							<Card className="card-gradient">
-								<CardContent className="p-4">
-									<h4 className="font-semibold">NASA</h4>
-									<p className="text-sm text-muted-foreground">NCAS Scholar</p>
-								</CardContent>
-							</Card>
-						</div>
-
-						<Button asChild>
-							<Link href="/about">
-								Learn More <ArrowRight className="ml-2 h-4 w-4" />
-							</Link>
-						</Button>
+				<motion.div
+					variants={staggerContainer()}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true }}
+					className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+				>
+					<motion.div variants={fadeIn('up', 0.1)}>
+						<Card className="h-full card-gradient">
+							<CardContent className="p-6">
+								<h3 className="text-xl font-semibold mb-4">Education</h3>
+								<p className="text-muted-foreground">
+									Currently pursuing a B.S. in Electrical Engineering at UC Irvine (3.51 GPA),
+									with prior studies at Foothill College (3.82 GPA).
+								</p>
+							</CardContent>
+						</Card>
 					</motion.div>
-				</div>
+
+					<motion.div variants={fadeIn('up', 0.2)}>
+						<Card className="h-full card-gradient">
+							<CardContent className="p-6">
+								<h3 className="text-xl font-semibold mb-4">Experience</h3>
+								<p className="text-muted-foreground">
+									Founded SP Logistics generating $120K+ in sales, and participated in
+									NASA NCAS program leading research on lunar mobility systems.
+								</p>
+							</CardContent>
+						</Card>
+					</motion.div>
+
+					<motion.div variants={fadeIn('up', 0.3)}>
+						<Card className="h-full card-gradient">
+							<CardContent className="p-6">
+								<h3 className="text-xl font-semibold mb-4">Skills</h3>
+								<p className="text-muted-foreground">
+									Proficient in C++, Python, Verilog, and embedded systems (Arduino, Raspberry Pi).
+									Experienced with circuits, oscilloscopes and soldering.
+								</p>
+							</CardContent>
+						</Card>
+					</motion.div>
+				</motion.div>
 			</div>
 		</section>
 	);
