@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FileDown, ExternalLink, Award } from 'lucide-react';
+import { FileDown, Award } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -53,17 +53,9 @@ export default function CertificatesPage() {
 										</div>
 									</CardContent>
 									<CardFooter className="p-6 pt-0 gap-2">
-										{cert.url && (
-											<Button size="sm" variant="outline" asChild>
-												<a href={cert.url} target="_blank" rel="noreferrer">
-													<ExternalLink className="h-4 w-4 mr-2" />
-													Verify
-												</a>
-											</Button>
-										)}
 										{cert.pdf && (
 											<Button size="sm" variant="outline" asChild>
-												<a href={cert.pdf} download>
+												<a href={cert.pdf} download="ncascompletion.pdf">
 													<FileDown className="h-4 w-4 mr-2" />
 													Download
 												</a>
