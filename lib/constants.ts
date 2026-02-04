@@ -154,7 +154,7 @@ export const projects: Project[] = [
 			
 			The tool successfully reduced account generation time significantly while ensuring high success rates and account longevity.
 		`,
-		image: 'https://images.pexels.com/photos/1036657/pexels-photo-1036657.jpeg',
+		image: '/dart.jpg',
 		tags: ['Go', 'Automation', 'Concurrency', 'API Integration'],
 		link: '#',
 		repo: 'https://github.com/blayyd/dart-nike-gen',
@@ -213,28 +213,12 @@ export type Certificate = {
 
 export const certificates: Certificate[] = [
 	{
-		title: 'Engineering Professional Certification',
-		issuer: 'Professional Engineering Association',
-		date: 'Nov 2023',
-		id: 'CERT-12345',
-		url: '#',
-		pdf: '/certificates/sample.pdf',
-	},
-	{
-		title: 'CAD Design Specialist',
-		issuer: 'Autodesk',
-		date: 'Jun 2023',
-		id: 'CERT-67890',
-		url: '#',
-		pdf: '/certificates/sample.pdf',
-	},
-	{
-		title: 'Project Management Fundamentals',
-		issuer: 'Project Management Institute',
-		date: 'Mar 2023',
-		id: 'CERT-24680',
-		url: '#',
-		pdf: '/certificates/sample.pdf',
+		title: 'NASA Community College Aerospace Scholars (NCAS) Completion',
+		issuer: 'NASA',
+		date: 'Apr 2025',
+		id: 'NCAS-2025',
+		url: 'https://www.nasa.gov/learning-resources/nasa-community-college-aerospace-scholars/',
+		pdf: '/ncascompletion.pdf',
 	},
 ];
 
@@ -248,7 +232,7 @@ export const skills: Skill[] = [
 	// Technical Skills (Design Tools & Lab Equipment)
 	{ name: 'LTspice', level: 8, category: 'technical' },
 	{ name: 'Vivado', level: 7, category: 'technical' },
-	{ name: 'KiCad (Schematics/PCB)', level: 8, category: 'technical' },
+	{ name: 'KiCad (Schematics/PCB)', level: 5, category: 'technical' },
 	{ name: 'Oscilloscope', level: 9, category: 'technical' },
 	{ name: 'Soldering', level: 8, category: 'technical' },
 
@@ -257,7 +241,7 @@ export const skills: Skill[] = [
 	{ name: 'Verilog', level: 7, category: 'software' },
 	{ name: 'Python', level: 8, category: 'software' },
 	{ name: 'Go', level: 7, category: 'software' },
-	{ name: 'MATLAB', level: 8, category: 'software' },
+	{ name: 'MATLAB', level: 6, category: 'software' },
 	{ name: 'LaTeX', level: 7, category: 'software' },
 
 	// Soft Skills

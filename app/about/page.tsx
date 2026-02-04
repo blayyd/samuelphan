@@ -43,8 +43,8 @@ export default function AboutPage() {
 
 					<motion.div variants={fadeIn('left', 0.3)} className="relative h-[500px]">
 						<Image
-							src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg"
-							alt="Professional photo"
+							src="/profilepic.jpg"
+							alt="Samuel Phan's profile photo"
 							fill
 							className="object-cover rounded-lg"
 							sizes="(max-width: 768px) 100vw, 50vw"
@@ -88,7 +88,7 @@ export default function AboutPage() {
 								<h3 className="text-xl font-semibold mb-4">Skills</h3>
 								<p className="text-muted-foreground">
 									Proficient in C++, Python, Verilog, and embedded systems (Arduino, Raspberry Pi).
-									Experienced with PCB design, oscilloscopes, and soldering.
+									Experienced with circuits, oscilloscopes and soldering.
 								</p>
 							</CardContent>
 						</Card>
