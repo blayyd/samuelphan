@@ -129,7 +129,7 @@ export const projects: Project[] = [
 			
 			The result was a 500% increase in reliable print speeds while maintaining higher quality than stock settings.
 		`,
-		image: 'https://images.pexels.com/photos/3913025/pexels-photo-3913025.jpeg',
+		image: '/ender3.JPEG',
 		tags: ['Raspberry Pi', 'Klipper', 'CAD', '3D Printing', 'Hardware'],
 		link: '#',
 		repo: '#',
