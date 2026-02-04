@@ -43,7 +43,7 @@ export default function AboutPage() {
 
 					<motion.div variants={fadeIn('left', 0.3)} className="relative h-[500px]">
 						<Image
-							src="/profilepic.jpg"
+							src="/profilepic.jpeg"
 							alt="Samuel Phan's profile photo"
 							fill
 							className="object-cover rounded-lg"
