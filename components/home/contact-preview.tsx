@@ -26,8 +26,9 @@ export function ContactPreview() {
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		// Form submission would be handled here
-		alert('Form submitted! This is a demo - no actual email is sent.');
+		const subject = encodeURIComponent(`Contact from ${formState.name}`);
+		const body = encodeURIComponent(`Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`);
+		window.location.href = `mailto:samuelphan21@gmail.com?subject=${subject}&body=${body}`;
 		setFormState({ name: '', email: '', message: '' });
 	};
 

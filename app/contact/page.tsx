@@ -29,9 +29,9 @@ export default function ContactPage() {
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		// Form submission logic would go here
-		console.log('Form submitted:', formState);
-		alert('Message sent successfully!');
+		const subject = encodeURIComponent(formState.subject || 'Contact from Portfolio');
+		const body = encodeURIComponent(`Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`);
+		window.location.href = `mailto:samuelphan21@gmail.com?subject=${subject}&body=${body}`;
 		setFormState({ name: '', email: '', subject: '', message: '' });
 	};
 
