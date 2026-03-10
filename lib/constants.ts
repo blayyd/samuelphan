@@ -89,6 +89,7 @@ export type Project = {
 	tags: string[];
 	link?: string;
 	repo?: string;
+	gallery?: string[];
 };
 
 export const projects: Project[] = [
@@ -112,6 +113,27 @@ export const projects: Project[] = [
 		tags: ['Arduino', 'ROS2', '3D Printing', 'Robotics', 'Project Management'],
 		link: '#',
 		repo: '#',
+	},
+	{
+		title: 'UnderWatch',
+		slug: 'underwatch',
+		description:
+			'Elder monitoring system that uses local edge AI and Computer Vision built at IrvineHacks 2027. Uses an image categorization ML model that reached an accuracy of 83%. Uses confidence scoring for fall detection.',
+		content: `
+			UnderWatch is a fall detection system built at IrvineHacks 2026, leveraging local edge AI and Computer Vision to enhance safety and autonomy.
+			
+			Key features include:
+			- Custom-trained image categorization ML model with 83% accuracy.
+			- Real-time confidence scoring for reliable fall detection.
+			- Local edge processing for privacy and speed.
+			
+			My contributions included programming the Arduino Uno Q to connect to the USB webcam, training the ML model using Edge Impulse, and integrating the system into a cohesive solution for elder monitoring.
+		`,
+		image: '/underwatch.png',
+		tags: ['Edge AI', 'Computer Vision', 'Machine Learning', 'Arduino', 'Python'],
+		link: 'https://devpost.com/software/ai-gf',
+		repo: '#',
+		gallery: ['/underwatch_example.jpg'],
 	},
 	{
 		title: 'Custom Ender 3 V2',
@@ -155,27 +177,7 @@ export const projects: Project[] = [
 		link: '#',
 		repo: 'https://github.com/blayyd/dart-nike-gen',
 	},
-	{
-		title: 'UnderWatch',
-		slug: 'underwatch',
-		description:
-			'Elder monitoring system that uses local edge AI and Computer Vision built at IrvineHacks 2027. Uses an image categorization ML model that reached an accuracy of 83%. Uses confidence scoring for fall detection.',
-		content: `
-			UnderWatch is an innovative elder monitoring system built at IrvineHacks 2026, leveraging local edge AI and Computer Vision to enhance safety and autonomy.
-			
-			Key features include:
-			- Custom-trained image categorization ML model with 83% accuracy.
-			- Real-time confidence scoring for reliable fall detection.
-			- Local edge processing for privacy and speed.
-			
-			The system demonstrates the potential of applying advanced AI techniques to solve critical real-world problems in elder care.
-		`,
-		image: '/underwatch.png',
-		tags: ['Edge AI', 'Computer Vision', 'Machine Learning', 'IrvineHacks', 'Python'],
-		link: 'https://devpost.com/software/ai-gf',
-		repo: '#',
-	},
-];
+	];
 
 export type Education = {
 	degree: string;

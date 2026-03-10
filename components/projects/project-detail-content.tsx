@@ -98,6 +98,25 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
 							</div>
 						</motion.div>
 
+						{/* Gallery Section */}
+						{project.gallery && project.gallery.length > 0 && (
+							<motion.div variants={fadeInScale(0.5)} className="mt-16">
+								<h3 className="text-3xl font-bold mb-8">Gallery</h3>
+								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+									{project.gallery.map((image, index) => (
+										<div key={index} className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+											<Image
+												src={image}
+												alt={`${project.title} gallery image ${index + 1}`}
+												fill
+												className="object-cover hover:scale-105 transition-transform duration-500"
+											/>
+										</div>
+									))}
+								</div>
+							</motion.div>
+						)}
+
 						{/* Quick Info Card */}
 						<motion.div variants={fadeInScale(0.5)} className="mt-16">
 							<Card className="bg-card/50 border-primary/10">
