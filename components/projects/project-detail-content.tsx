@@ -69,7 +69,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
 									<Button asChild size="lg">
 										<Link href={project.link} target="_blank" rel="noreferrer">
 											<ExternalLink className="mr-2 h-5 w-5" />
-											Live Demo
+											{project.linkLabel || 'Live Demo'}
 										</Link>
 									</Button>
 								)}

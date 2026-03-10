@@ -88,6 +88,7 @@ export type Project = {
 	image: string;
 	tags: string[];
 	link?: string;
+	linkLabel?: string;
 	repo?: string;
 	gallery?: string[];
 };
@@ -132,7 +133,8 @@ export const projects: Project[] = [
 		image: '/underwatch.png',
 		tags: ['Edge AI', 'Computer Vision', 'Machine Learning', 'Arduino', 'Python'],
 		link: 'https://devpost.com/software/ai-gf',
-		repo: '#',
+		linkLabel: 'DevPost',
+		repo: 'https://github.com/kevinlycc/UnderWatch',
 		gallery: ['/underwatch_example.jpg'],
 	},
 	{
