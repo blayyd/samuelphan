@@ -10,6 +10,40 @@ import NET from 'vanta/dist/vanta.net.min';
 import { Button } from '@/components/ui/button';
 import { fadeIn, staggerContainer } from '@/lib/motion';
 
+/** Vanta.js NET effect configuration — all tunable values in one place */
+const VANTA_CONFIG = {
+	el: undefined as unknown as HTMLElement,
+	THREE,
+	mouseControls: true,
+	touchControls: true,
+	gyroControls: false,
+	minHeight: 8 * 24,   // 192px (8px-based)
+	minWidth: 8 * 24,    // 192px (8px-based)
+	scale: 0.8,
+	scaleMobile: 0.8,
+	color: 0xa855f7,
+	backgroundColor: 0x0a0a0a,
+	points: 10,
+	maxDistance: 15,
+	spacing: 20,
+	showDots: false,
+} as const;
+
+/**
+ * Spacing scale: all values are multiples of 8px.
+ * ─────────────────────────────────────────────
+ * Token  px     Used in
+ * ─────────────────────────────────────────────
+ * p-4    16     container padding
+ * py-24  96     section vertical padding (mobile)
+ * md:py-40 160  section vertical padding (desktop)
+ * mb-4   16     h2 → h1 gap
+ * mt-8   32     h1 → paragraph gap
+ * mt-16  64     paragraph → buttons gap
+ * gap-4  16     button row gap
+ * h-32   128    bottom gradient height
+ */
+
 export function HeroSection() {
 	const [vantaEffect, setVantaEffect] = useState<any>(null);
 	const vantaRef = useRef<HTMLDivElement>(null);
@@ -18,21 +52,8 @@ export function HeroSection() {
 		if (!vantaEffect && vantaRef.current) {
 			setVantaEffect(
 				NET({
+					...VANTA_CONFIG,
 					el: vantaRef.current,
-					THREE: THREE,
-					mouseControls: true,
-					touchControls: true,
-					gyroControls: false,
-					minHeight: 200.00,
-					minWidth: 200.00,
-					scale: 0.8,
-					scaleMobile: 0.8,
-					color: 0xa855f7,
-					backgroundColor: 0x0a0a0a,
-					points: 10.00,
-					maxDistance: 15.00,
-					spacing: 20.00,
-					showDots: false,
 				})
 			);
 		}
@@ -47,7 +68,7 @@ export function HeroSection() {
 			<div ref={vantaRef} className="absolute inset-0 z-0 opacity-60" />
 
 			{/* Content */}
-			<div className="container relative z-10 px-4 py-20 md:py-32 flex flex-col items-center justify-center min-h-[90vh]">
+			<div className="container relative z-10 p-4 py-24 md:py-40 flex flex-col items-center justify-center min-h-[90vh]">
 				<motion.div
 					variants={staggerContainer()}
 					initial="hidden"
@@ -56,7 +77,7 @@ export function HeroSection() {
 				>
 					<motion.h2
 						variants={fadeIn('up', 0.2)}
-						className="text-3xl md:text-4xl font-bold mb-4 text-primary"
+						className="text-lg md:text-xl font-medium mb-4 text-muted-foreground tracking-wide uppercase"
 					>
 						Electrical Engineering Student
 					</motion.h2>
@@ -70,14 +91,14 @@ export function HeroSection() {
 
 					<motion.p
 						variants={fadeIn('up', 0.5)}
-						className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto"
+						className="mt-8 text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto"
 					>
 						A showcase of my projects, skills, and achievements in electrical engineering, embedded systems, and robotics.
 					</motion.p>
 
 					<motion.div
 						variants={fadeIn('up', 0.7)}
-						className="mt-10 flex flex-wrap gap-4 justify-center"
+						className="mt-16 flex flex-wrap gap-4 justify-center"
 					>
 						<Button size="lg" asChild>
 							<Link href="/projects">
@@ -94,7 +115,7 @@ export function HeroSection() {
 			</div>
 
 			{/* Bottom gradient */}
-			<div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+			<div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
 		</section>
 	);
 }

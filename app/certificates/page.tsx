@@ -5,7 +5,7 @@ import { FileDown, Award } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { certificates } from '@/lib/constants';
+import { certificates } from '@/data/certificates';
 import { fadeIn, staggerContainer } from '@/lib/motion';
 
 export default function CertificatesPage() {

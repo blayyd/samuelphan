@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { X, Menu, ChevronDown } from 'lucide-react';
 
-import { siteConfig } from '@/lib/constants';
+import { siteConfig } from '@/data/site-config';
 import { Button } from '@/components/ui/button';
 import {
 	Sheet,

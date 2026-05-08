@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { SectionHeader } from '@/components/ui/section-header';
-import { projects } from '@/lib/constants';
+import { projects } from '@/data/projects';
 import { staggerContainer, fadeInScale } from '@/lib/motion';
 
 export function ProjectsPreview() {
