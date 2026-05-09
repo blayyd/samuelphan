@@ -8,7 +8,7 @@ import { Github, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { projects } from '@/lib/constants';
+import { projects } from '@/data/projects';
 import { staggerContainer, fadeInScale } from '@/lib/motion';
 
 export default function ProjectsPage() {

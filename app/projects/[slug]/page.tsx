@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { projects } from '@/lib/constants';
+import { projects } from '@/data/projects';
 import ProjectDetailContent from '@/components/projects/project-detail-content';
 
 export function generateStaticParams() {

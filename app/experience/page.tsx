@@ -5,7 +5,7 @@ import { Calendar, MapPin, CheckCircle2 } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { experiences } from '@/lib/constants';
+import { experiences } from '@/data/experience';
 import { fadeIn, staggerContainer } from '@/lib/motion';
 
 export default function ExperiencePage() {

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { SectionHeader } from '@/components/ui/section-header';
-import { skills } from '@/lib/constants';
+import { skills } from '@/data/skills';
 import { staggerContainer, fadeIn } from '@/lib/motion';
 
 export function SkillsPreview() {

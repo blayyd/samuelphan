@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
-import { Project } from '@/lib/constants';
+import { Project } from '@/data/projects';
 import { fadeInScale, staggerContainer } from '@/lib/motion';
 
 interface ProjectDetailContentProps {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Linkedin, Github, Twitter, Facebook, Instagram, Phone, Mail, MessageSquare } from 'lucide-react';
 
-import { siteConfig } from '@/lib/constants';
+import { siteConfig } from '@/data/site-config';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 

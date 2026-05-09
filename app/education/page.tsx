@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Award } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
-import { education } from '@/lib/constants';
+import { education } from '@/data/education';
 import { fadeIn, staggerContainer } from '@/lib/motion';
 
 export default function EducationPage() {

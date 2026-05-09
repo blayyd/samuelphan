@@ -8,74 +8,36 @@ import { AboutPreview } from '@/components/home/about-preview';
 import { ProjectsPreview } from '@/components/home/projects-preview';
 import { SkillsPreview } from '@/components/home/skills-preview';
 import { ContactPreview } from '@/components/home/contact-preview';
+import { AboutPreviewSkeleton, ProjectsPreviewSkeleton } from '@/components/home/home-skeletons';
 
 export default function Home() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
-		const handleLoad = () => {
+		// Simulate data loading or wait for window load
+		const timer = setTimeout(() => {
 			setIsLoading(false);
-		};
+		}, 1000); // Small delay to show skeletons
 
-		if (document.readyState === 'complete') {
-			setIsLoading(false);
-		} else {
-			window.addEventListener('load', handleLoad);
-			return () => window.removeEventListener('load', handleLoad);
-		}
+		return () => clearTimeout(timer);
 	}, []);
 
 	return (
 		<>
-			<AnimatePresence>
-				{isLoading && (
-					<motion.div
-						className="fixed inset-0 z-50 flex items-center justify-center bg-background"
-						initial={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						transition={{ duration: 0.5 }}
-					>
-						<motion.div
-							className="flex flex-col items-center"
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5 }}
-						>
-							<motion.div
-								className="w-16 h-16 border-t-4 border-primary border-solid rounded-full"
-								animate={{ rotate: 360 }}
-								transition={{
-									repeat: Infinity,
-									duration: 1,
-									ease: "linear"
-								}}
-							/>
-							<motion.p
-								className="mt-4 text-lg"
-								animate={{
-									opacity: [0.5, 1, 0.5],
-								}}
-								transition={{
-									repeat: Infinity,
-									duration: 1.5
-								}}
-							>
-								Loading...
-							</motion.p>
-						</motion.div>
-					</motion.div>
-				)}
-			</AnimatePresence>
-
-			{!isLoading && (
+			<HeroSection />
+			{isLoading ? (
 				<>
-					<HeroSection />
+					<AboutPreviewSkeleton />
+					<ProjectsPreviewSkeleton />
+				</>
+			) : (
+				<>
 					<AboutPreview />
 					<ProjectsPreview />
-					<SkillsPreview />
-					<ContactPreview />
 				</>
 			)}
+			<SkillsPreview />
+			<ContactPreview />
 		</>
 	);
 }
