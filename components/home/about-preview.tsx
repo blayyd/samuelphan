@@ -77,8 +77,8 @@ export function AboutPreview() {
 							<CardContent className="p-6">
 								<h3 className="text-xl font-semibold mb-4">Experience</h3>
 								<p className="text-muted-foreground">
-									Founded SP Logistics generating $120K+ in sales, and participated in
-									NASA NCAS program leading research on lunar mobility systems.
+									CMOS Image Sensor Characterization Intern at OmniVision, founder of
+									SP Logistics ($120K+ in sales), and NASA NCAS scholar leading lunar mobility research.
 								</p>
 							</CardContent>
 						</Card>
