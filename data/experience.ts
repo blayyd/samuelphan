@@ -31,10 +31,10 @@ export const experiences: Experience[] = [
 		description: [
 			'Founded and scaled an online arbitrage business by sourcing and reselling limited, high-demand products, generating over $120,000 in total sales',
 			'Leveraged data analytics to optimize pricing strategies and maximize profit margins',
-			'Built automation tools in Python that cut inventory sourcing time by 40%',
+			'Built automation tools in Go that cut inventory sourcing time by 40%',
 			'Collaborated with a network of sellers to share insights and strategies that improved collective sales outcomes',
 		],
-		technologies: ['Python', 'Data Analytics', 'Automation', 'E-commerce'],
+		technologies: ['Go', 'Data Analytics', 'Automation', 'E-commerce'],
 	},
 	{
 		title: 'NASA Community College Aerospace Scholars',
