@@ -19,6 +19,7 @@ export const education: Education[] = [
 		endDate: 'Expected Jun 2027',
 		gpa: '3.61/4.00',
 		achievements: [
+			'Electrical Engineering Scholarship, 2026-2027',
 			'Circuit Analysis II',
 			'Discrete Time-Signals & Systems',
 			'Intro to Digital Logic Design Lab',
