@@ -1,14 +1,13 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, FileDown } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { fadeIn, staggerContainer } from '@/lib/motion';
 import { FourierWaveform } from '@/components/home/fourier-waveform';
-import { cn } from '@/lib/utils';
 
 /**
  * Spacing scale: all values are multiples of 8px.
@@ -22,7 +21,6 @@ import { cn } from '@/lib/utils';
  * mt-8   32     h1 → paragraph gap
  * mt-16  64     paragraph → buttons gap
  * gap-4  16     button row gap
- * h-32   128    bottom gradient height
  */
 
 export function HeroSection() {
@@ -31,34 +29,17 @@ export function HeroSection() {
 		target: sectionRef,
 		offset: ['start 64px', 'end end'],
 	});
-	const [copyInteractive, setCopyInteractive] = useState(true);
-	const copyOpacity = useTransform(scrollYProgress, [0, 0.28, 0.48], [1, 0.55, 0]);
-	const copyY = useTransform(scrollYProgress, [0, 0.48], [0, -48]);
 	const captionOpacity = useTransform(scrollYProgress, [0.28, 0.48], [0, 1]);
-	const scrimOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 0.45, 0]);
-
-	useMotionValueEvent(scrollYProgress, 'change', (value) => {
-		const next = value < 0.4;
-		setCopyInteractive((prev) => (prev === next ? prev : next));
-	});
 
 	return (
 		<section ref={sectionRef} className="relative h-[200vh]">
 			<div className="sticky top-16 h-[calc(100vh-4rem)] supports-[height:100dvh]:h-[calc(100dvh-4rem)] overflow-hidden">
 				<FourierWaveform progress={scrollYProgress} />
 
-				<motion.div
-					style={{ opacity: scrimOpacity }}
-					className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background via-background/75 to-transparent"
-				/>
+				{/* Scrim so the title stays readable over the traces */}
+				<div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background via-background/70 to-transparent" />
 
-				<motion.div
-					style={{ opacity: copyOpacity, y: copyY }}
-					className={cn(
-						'container relative z-10 flex h-full flex-col items-center justify-center p-4 py-24 md:py-32',
-						!copyInteractive && 'pointer-events-none'
-					)}
-				>
+				<div className="container relative z-10 flex h-full flex-col items-center justify-center p-4 py-24 md:py-32">
 					<motion.div
 						variants={staggerContainer()}
 						initial="hidden"
@@ -102,7 +83,7 @@ export function HeroSection() {
 							</Button>
 						</motion.div>
 					</motion.div>
-				</motion.div>
+				</div>
 
 				<motion.p
 					style={{ opacity: captionOpacity }}

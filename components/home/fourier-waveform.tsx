@@ -200,8 +200,8 @@ export function FourierWaveform({ progress }: FourierWaveformProps) {
 			const right = width - 28 - spectrumW;
 			const waveW = Math.max(40, right - left);
 
-			const bandCenter = lerp(height * 0.7, height * 0.5, peel);
-			const bandHeight = lerp(height * 0.34, height * 0.78, peel);
+			const bandCenter = lerp(height * 0.72, height * 0.7, peel);
+			const bandHeight = lerp(height * 0.32, height * 0.5, peel);
 			const scale = (bandHeight * 0.38) / maxAmp;
 			const n = harmonics.length;
 			const lane = n > 1 ? bandHeight / n : bandHeight;
@@ -253,12 +253,13 @@ export function FourierWaveform({ progress }: FourierWaveformProps) {
 			}
 
 			if (!isMobile && spectrumW > 8) {
+				const plotH = Math.min(height * 0.32, bandHeight * 0.9);
 				drawSpectrum(
 					harmonics,
 					width - spectrumW - 16,
-					height * 0.28,
+					bandCenter - plotH / 2,
 					spectrumW - 8,
-					height * 0.44,
+					plotH,
 					spectrumAlpha,
 					spectrumGrow
 				);
