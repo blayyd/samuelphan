@@ -17,7 +17,7 @@ export const education: Education[] = [
 		location: 'Irvine, CA',
 		startDate: 'Sep 2025',
 		endDate: 'Expected Jun 2027',
-		gpa: '3.51/4.00',
+		gpa: '3.61/4.00',
 		achievements: [
 			'Circuit Analysis II',
 			'Discrete Time-Signals & Systems',

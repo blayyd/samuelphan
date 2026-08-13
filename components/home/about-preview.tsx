@@ -65,7 +65,7 @@ export function AboutPreview() {
 							<CardContent className="p-6">
 								<h3 className="text-xl font-semibold mb-4">Education</h3>
 								<p className="text-muted-foreground">
-									Currently pursuing a B.S. in Electrical Engineering at UC Irvine (3.51 GPA),
+									Currently pursuing a B.S. in Electrical Engineering at UC Irvine (3.61 GPA),
 									with prior studies at Foothill College (3.82 GPA).
 								</p>
 							</CardContent>
