@@ -91,6 +91,9 @@ export function Navbar() {
 										{item.title}
 									</Link>
 								))}
+								<Link href="/contact">
+									<Button className="w-full">Contact Me</Button>
+								</Link>
 							</nav>
 							<div className="mt-auto pt-4">
 								<DropdownMenu>

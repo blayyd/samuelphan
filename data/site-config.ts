@@ -27,10 +27,6 @@ export const siteConfig = {
 			title: 'Certificates',
 			href: '/certificates',
 		},
-		{
-			title: 'Contact',
-			href: '/contact',
-		},
 	],
 	links: {
 		github: 'https://github.com/blayyd',
