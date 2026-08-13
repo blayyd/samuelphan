@@ -32,13 +32,16 @@ export function HeroSection() {
 	});
 	const copyOpacity = useTransform(scrollYProgress, [0, 0.5, 0.85], [1, 0.7, 0.28]);
 	const copyY = useTransform(scrollYProgress, [0, 1], [0, -32]);
-	const captionOpacity = useTransform(scrollYProgress, [0.35, 0.6], [0, 1]);
+	const captionOpacity = useTransform(scrollYProgress, [0.35, 0.6, 0.92, 1], [0, 1, 1, 0]);
 	const scrimOpacity = useTransform(scrollYProgress, [0, 0.45, 0.8], [1, 0.5, 0.12]);
+	const stageOpacity = useTransform(scrollYProgress, [0.92, 1], [1, 0]);
 
 	return (
 		<section ref={sectionRef} className="relative h-[200vh]">
 			<div className="sticky top-16 h-[calc(100vh-4rem)] supports-[height:100dvh]:h-[calc(100dvh-4rem)] overflow-hidden">
-				<FourierWaveform progress={scrollYProgress} />
+				<motion.div style={{ opacity: stageOpacity }} className="absolute inset-0">
+					<FourierWaveform progress={scrollYProgress} />
+				</motion.div>
 
 				<motion.div
 					style={{ opacity: scrimOpacity }}
