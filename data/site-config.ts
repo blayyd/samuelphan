@@ -12,16 +12,16 @@ export const siteConfig = {
 			href: '/education',
 		},
 		{
-			title: 'Skills',
-			href: '/skills',
-		},
-		{
 			title: 'Experience',
 			href: '/experience',
 		},
 		{
 			title: 'Projects',
 			href: '/projects',
+		},
+		{
+			title: 'Skills',
+			href: '/skills',
 		},
 		{
 			title: 'Certificates',
