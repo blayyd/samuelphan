@@ -185,12 +185,14 @@ export function FourierWaveform({ progress }: FourierWaveformProps) {
 		const paint = (time: number, p: number) => {
 			if (width <= 0 || height <= 0) return;
 
-			const peel = smoothstep(0.22, 0.95, p);
-			const compositeAlpha = 1 - smoothstep(0.15, 0.35, p);
-			const harmonicAlpha = smoothstep(0.15, 0.35, p) * 0.92;
-			const labelAlpha = smoothstep(0.45, 0.7, p);
-			const spectrumAlpha = smoothstep(0.5, 0.75, p);
-			const spectrumGrow = smoothstep(0.48, 0.9, p);
+			// Finish the split in the first half of the sticky range so About
+			// can ride in over a held harmonic stack instead of empty space.
+			const peel = smoothstep(0.12, 0.52, p);
+			const compositeAlpha = 1 - smoothstep(0.08, 0.26, p);
+			const harmonicAlpha = smoothstep(0.08, 0.26, p) * 0.92;
+			const labelAlpha = smoothstep(0.28, 0.45, p);
+			const spectrumAlpha = smoothstep(0.32, 0.5, p);
+			const spectrumGrow = smoothstep(0.3, 0.52, p);
 
 			const spectrumW = isMobile ? 0 : lerp(0, 132, spectrumAlpha);
 			const labelX = isMobile ? 10 : 16;

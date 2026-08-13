@@ -1,13 +1,14 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, FileDown } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { fadeIn, staggerContainer } from '@/lib/motion';
 import { FourierWaveform } from '@/components/home/fourier-waveform';
+import { cn } from '@/lib/utils';
 
 /**
  * Spacing scale: all values are multiples of 8px.
@@ -30,18 +31,21 @@ export function HeroSection() {
 		target: sectionRef,
 		offset: ['start 64px', 'end end'],
 	});
-	const copyOpacity = useTransform(scrollYProgress, [0, 0.5, 0.85], [1, 0.7, 0.28]);
-	const copyY = useTransform(scrollYProgress, [0, 1], [0, -32]);
-	const captionOpacity = useTransform(scrollYProgress, [0.35, 0.6, 0.92, 1], [0, 1, 1, 0]);
-	const scrimOpacity = useTransform(scrollYProgress, [0, 0.45, 0.8], [1, 0.5, 0.12]);
-	const stageOpacity = useTransform(scrollYProgress, [0.92, 1], [1, 0]);
+	const [copyInteractive, setCopyInteractive] = useState(true);
+	const copyOpacity = useTransform(scrollYProgress, [0, 0.28, 0.48], [1, 0.55, 0]);
+	const copyY = useTransform(scrollYProgress, [0, 0.48], [0, -48]);
+	const captionOpacity = useTransform(scrollYProgress, [0.28, 0.48], [0, 1]);
+	const scrimOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 0.45, 0]);
+
+	useMotionValueEvent(scrollYProgress, 'change', (value) => {
+		const next = value < 0.4;
+		setCopyInteractive((prev) => (prev === next ? prev : next));
+	});
 
 	return (
 		<section ref={sectionRef} className="relative h-[200vh]">
 			<div className="sticky top-16 h-[calc(100vh-4rem)] supports-[height:100dvh]:h-[calc(100dvh-4rem)] overflow-hidden">
-				<motion.div style={{ opacity: stageOpacity }} className="absolute inset-0">
-					<FourierWaveform progress={scrollYProgress} />
-				</motion.div>
+				<FourierWaveform progress={scrollYProgress} />
 
 				<motion.div
 					style={{ opacity: scrimOpacity }}
@@ -50,7 +54,10 @@ export function HeroSection() {
 
 				<motion.div
 					style={{ opacity: copyOpacity, y: copyY }}
-					className="container relative z-10 flex h-full flex-col items-center justify-center p-4 py-24 md:py-32"
+					className={cn(
+						'container relative z-10 flex h-full flex-col items-center justify-center p-4 py-24 md:py-32',
+						!copyInteractive && 'pointer-events-none'
+					)}
 				>
 					<motion.div
 						variants={staggerContainer()}
@@ -103,9 +110,6 @@ export function HeroSection() {
 				>
 					Harmonic series · DFT
 				</motion.p>
-
-				{/* Bottom gradient */}
-				<div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-t from-background to-transparent" />
 			</div>
 		</section>
 	);
