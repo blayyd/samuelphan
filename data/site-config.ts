@@ -12,10 +12,6 @@ export const siteConfig = {
 			href: '/education',
 		},
 		{
-			title: 'Skills',
-			href: '/skills',
-		},
-		{
 			title: 'Experience',
 			href: '/experience',
 		},
@@ -24,12 +20,12 @@ export const siteConfig = {
 			href: '/projects',
 		},
 		{
-			title: 'Certificates',
-			href: '/certificates',
+			title: 'Skills',
+			href: '/skills',
 		},
 		{
-			title: 'Contact',
-			href: '/contact',
+			title: 'Certificates',
+			href: '/certificates',
 		},
 	],
 	links: {
