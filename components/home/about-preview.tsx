@@ -12,7 +12,7 @@ import { fadeIn, staggerContainer } from '@/lib/motion';
 
 export function AboutPreview() {
 	return (
-		<section className="py-16 md:py-24" id="about">
+		<section className="bg-background pb-16 md:pb-24" id="about">
 			<div className="container px-4">
 				<motion.div
 					variants={staggerContainer()}
