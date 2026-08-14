@@ -31,7 +31,7 @@ export function HeroSection() {
 	});
 
 	return (
-		<section ref={sectionRef} className="relative h-[200vh]">
+		<section ref={sectionRef} className="relative h-[150vh]">
 			<div className="sticky top-16 h-[calc(100vh-4rem)] supports-[height:100dvh]:h-[calc(100dvh-4rem)] overflow-hidden">
 				<FourierWaveform progress={scrollYProgress} />
 

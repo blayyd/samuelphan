@@ -25,10 +25,10 @@ export default function Home() {
 	return (
 		<>
 			<HeroSection />
-			<div className="relative z-20 -mt-[calc(100vh-4rem)] supports-[height:100dvh]:-mt-[calc(100dvh-4rem)]">
+			<div className="relative z-20 -mt-[calc(50vh+4rem)] supports-[height:100dvh]:-mt-[calc(50dvh+4rem)]">
 				<div
 					aria-hidden
-					className="pointer-events-none h-[36vh] bg-gradient-to-b from-transparent via-background/55 to-background"
+					className="pointer-events-none h-[18vh] bg-gradient-to-b from-transparent via-background/55 to-background"
 				/>
 				{isLoading ? (
 					<>
