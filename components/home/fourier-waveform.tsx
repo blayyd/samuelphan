@@ -164,12 +164,6 @@ export function FourierWaveform({ progress }: FourierWaveformProps) {
 			ctx.lineTo(plotX + plotW, plotY + plotH);
 			ctx.stroke();
 
-			ctx.font = '500 10px Inter, system-ui, sans-serif';
-			ctx.fillStyle = 'rgba(161, 161, 170, 0.7)';
-			ctx.textAlign = 'right';
-			ctx.textBaseline = 'top';
-			ctx.fillText('DFT', plotX + plotW, plotY - 14);
-
 			for (let k = 1; k <= slots; k++) {
 				const h = byK.get(k);
 				const x = plotX + (k - 1) * (barW + gap);

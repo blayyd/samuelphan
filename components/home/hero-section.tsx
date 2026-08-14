@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { ArrowRight, FileDown } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -29,7 +29,6 @@ export function HeroSection() {
 		target: sectionRef,
 		offset: ['start 64px', 'end end'],
 	});
-	const captionOpacity = useTransform(scrollYProgress, [0.28, 0.48], [0, 1]);
 
 	return (
 		<section ref={sectionRef} className="relative h-[200vh]">
@@ -84,13 +83,6 @@ export function HeroSection() {
 						</motion.div>
 					</motion.div>
 				</div>
-
-				<motion.p
-					style={{ opacity: captionOpacity }}
-					className="pointer-events-none absolute bottom-36 left-6 z-10 text-[10px] md:text-xs uppercase tracking-[0.25em] text-muted-foreground"
-				>
-					Harmonic series · DFT
-				</motion.p>
 			</div>
 		</section>
 	);
