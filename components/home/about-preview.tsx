@@ -34,10 +34,11 @@ export function AboutPreview() {
 						<div className="space-y-4">
 							<h3 className="text-2xl font-semibold">My Journey</h3>
 							<p className="text-muted-foreground">
-								From founding an e-commerce business that generated over $120,000 in sales to participating
-								in NASA's Community College Aerospace Scholars program, I've developed a unique blend of
-								entrepreneurial and technical skills. Currently, I'm leading a team to build a 6-axis robotic
-								arm and continuously pushing the boundaries of what's possible with embedded systems.
+								I currently intern at OmniVision as a CMOS Image Sensor Characterization Intern in Santa Clara,
+								working on test automation and sensor characterization. Before that, I founded an e-commerce
+								business that generated over $120,000 in sales and participated in NASA&apos;s Community College
+								Aerospace Scholars program. I&apos;m also leading a team to build a 6-axis robotic arm and
+								continuously pushing the boundaries of what&apos;s possible with embedded systems.
 							</p>
 						</div>
 					</motion.div>
