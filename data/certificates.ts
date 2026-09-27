@@ -9,6 +9,13 @@ export type Certificate = {
 
 export const certificates: Certificate[] = [
 	{
+		title: 'MATLAB Onramp',
+		issuer: 'MathWorks',
+		date: 'Sep 2026',
+		url: 'https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted',
+		pdf: '/matlab-onramp.pdf',
+	},
+	{
 		title: 'NASA Community College Aerospace Scholars (NCAS) Completion',
 		issuer: 'NASA',
 		date: 'Apr 2025',
