@@ -55,7 +55,10 @@ export default function CertificatesPage() {
 									<CardFooter className="p-6 pt-0 gap-2">
 										{cert.pdf && (
 											<Button size="sm" variant="outline" asChild>
-												<a href={cert.pdf} download="ncascompletion.pdf">
+												<a
+													href={cert.pdf}
+													download={cert.pdf.replace(/^\//, '')}
+												>
 													<FileDown className="h-4 w-4 mr-2" />
 													Download
 												</a>
