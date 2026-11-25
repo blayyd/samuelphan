@@ -68,7 +68,7 @@ export const projects: Project[] = [
 		badge: 'irvinehacks',
 		captions: ['Rig c/o irvinehacks', 'Detection c/o edge impulse'],
 		description:
-			'Elder monitoring system that uses local edge AI and Computer Vision built at IrvineHacks 2027. Uses an image categorization ML model that reached an accuracy of 83%. Uses confidence scoring for fall detection.',
+			'Elder monitoring system that uses local edge AI and Computer Vision built at IrvineHacks 2026. Uses an image categorization ML model that reached an accuracy of 83%. Uses confidence scoring for fall detection.',
 		content: `
 			UnderWatch is a fall detection system built at IrvineHacks 2026, leveraging local edge AI and Computer Vision to enhance safety and autonomy.
 			
