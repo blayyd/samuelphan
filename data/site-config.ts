@@ -1,37 +1,27 @@
+// Contact goes through the form plus GitHub and LinkedIn. No email address or phone number
+// is stored here or rendered anywhere on the site.
 export const siteConfig = {
 	name: 'Samuel Phan',
 	description:
 		'Electrical Engineering student at UC Irvine with experience in embedded systems, automation, and robotics.',
-	mainNav: [
-		{
-			title: 'Home',
-			href: '/',
-		},
-		{
-			title: 'Education',
-			href: '/education',
-		},
-		{
-			title: 'Experience',
-			href: '/experience',
-		},
-		{
-			title: 'Projects',
-			href: '/projects',
-		},
-		{
-			title: 'Skills',
-			href: '/skills',
-		},
-		{
-			title: 'Certificates',
-			href: '/certificates',
-		},
-	],
+	/** Short lowercase blurb used in the header. */
+	tagline: 'senior electrical engineering student at uc irvine with experience in embedded systems, automation, and robotics.',
+	/** Canonical origin; falls back to the Vercel production domain. */
+	url:
+		process.env.NEXT_PUBLIC_SITE_URL ||
+		(process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'https://samuelphan.vercel.app'),
+	/** Photo used on the home page and as the default share image. */
+	photo: '/photos/samuel-griffith-riso-v3.jpg',
+	/**
+	 * CV PDF for the download buttons. Left unset on purpose: the existing /resume.pdf prints an
+	 * email address and phone number. Set to a path under /public to show the buttons.
+	 */
+	cv: null as string | null,
 	links: {
 		github: 'https://github.com/blayyd',
+		githubHandle: 'blayyd',
 		linkedin: 'https://linkedin.com/in/samthephan',
-		email: 'mailto:samuelphan21@gmail.com',
-		phone: 'tel:+14088332906',
+		linkedinHandle: 'samthephan',
+		location: 'Irvine, CA',
 	},
 };

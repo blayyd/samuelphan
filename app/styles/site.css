@@ -1,0 +1,80 @@
+/* Site layout pieces that need media queries. Components keep their own .ee-* styles in bundle.css. */
+
+@media (max-width: 640px) {
+	:root { --margin-page: 16px; }
+}
+
+html { overflow-x: hidden; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1 0 auto; }
+img { max-width: 100%; }
+
+.pf-skip { position: absolute; left: -9999px; top: 8px; z-index: var(--z-tooltip); background: var(--surface-page); padding: 8px 12px; border: 1px solid var(--rule-strong); }
+.pf-skip:focus { left: 8px; }
+
+/* ---------- header ---------- */
+.pf-header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: clamp(16px, 3vw, 48px); align-items: start; padding: 28px var(--margin-page); }
+.pf-wordmark { font-size: 24px; line-height: .95; color: var(--text-strong); text-decoration: none; }
+.pf-wordmark:hover { color: var(--text-strong); text-decoration: none; }
+.pf-nav { display: flex; gap: clamp(16px, 3.5vw, 64px); flex-wrap: nowrap; min-width: 0; }
+.pf-nav__item { display: flex; gap: var(--space-4); align-items: flex-start; }
+.pf-nav__icon { display: none; padding-top: 2px; color: var(--text-strong); }
+.pf-nav__icon--active { color: var(--accent); }
+.pf-nav__col { display: flex; flex-direction: column; gap: 6px; }
+.pf-nav__main { font-size: 24px; color: var(--text-strong); text-underline-offset: 5px; }
+.pf-nav__main[aria-current="page"], .pf-nav__main--active { text-decoration: underline; }
+.pf-nav__main:hover { color: var(--text-strong); }
+.pf-nav__sub { display: flex; flex-direction: column; font-size: 13px; line-height: 1.3; font-weight: 300; }
+.pf-nav__sub a { color: var(--text-muted); }
+.pf-nav__sub a:hover { color: var(--link-hover); }
+.pf-header__aside { display: flex; gap: var(--space-6); align-items: flex-start; }
+.pf-header__blurb { display: none; margin: 0; max-width: 170px; line-height: 1.45; text-transform: none; letter-spacing: .02em; }
+@media (min-width: 1200px) {
+	.pf-nav__icon, .pf-header__blurb { display: block; }
+}
+@media (max-width: 720px) {
+	.pf-header { grid-template-columns: 1fr auto; row-gap: var(--space-6); padding-top: 20px; }
+	.pf-nav { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; }
+	.pf-nav__main { font-size: 22px; }
+}
+
+/* Radio tower waves pulse while the nav is hovered (stepped, mechanical). */
+@keyframes pf-wave-in { 0%, 33% { opacity: 1 } 34%, 100% { opacity: 0 } }
+@keyframes pf-wave-out { 0%, 33% { opacity: 0 } 34%, 66% { opacity: 1 } 67%, 100% { opacity: 0 } }
+.pf-tower--on path:nth-of-type(2), .pf-tower--on path:nth-of-type(3) { animation: pf-wave-in 1.2s step-end infinite; }
+.pf-tower--on path:nth-of-type(1), .pf-tower--on path:nth-of-type(4) { animation: pf-wave-out 1.2s step-end infinite; }
+
+/* ---------- footer ---------- */
+.pf-cta { background: var(--surface-raised); padding: var(--space-10) var(--margin-page); display: flex; flex-direction: column; align-items: center; gap: var(--space-6); text-align: center; color: var(--text-primary); }
+.pf-footbar { display: flex; justify-content: space-between; align-items: center; gap: var(--space-6); flex-wrap: wrap; padding: var(--space-6) var(--margin-page); border-top: 1px solid var(--rule-strong); font-weight: 300; font-size: 15px; }
+.pf-footbar a { color: var(--text-primary); }
+.pf-footbar a:hover { color: var(--link-hover); }
+.pf-footbar .ee-iconbtn:hover { text-decoration: none; }
+.pf-footbar__nav { display: flex; gap: var(--space-6); flex-wrap: wrap; }
+.pf-footbar__end { display: flex; gap: var(--space-2); align-items: center; }
+
+/* ---------- theme switch ---------- */
+.pf-theme { position: fixed; left: 16px; bottom: 16px; z-index: 20; background: var(--surface-page); border: 1px solid var(--rule-hair); padding: 8px 12px; }
+
+/* ---------- shared page bits ---------- */
+/* Text filter rows wrap on narrow screens instead of scrolling the count out of view. */
+@media (max-width: 640px) {
+	.ee-tabs--text { flex-wrap: wrap; column-gap: var(--space-5); row-gap: 0; overflow: visible; }
+}
+
+.pf-strip { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; padding: 12px var(--margin-page); background: var(--black); }
+.pf-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: var(--space-9); }
+.pf-next { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: var(--space-7) var(--margin-page); border-top: 1px solid var(--rule-strong); text-decoration: none; }
+.pf-next:hover { text-decoration: none; }
+.pf-next:hover .ee-nav { text-decoration: underline; text-underline-offset: 4px; }
+.pf-next .ee-nav, .pf-next__arrow { font-size: 24px; color: var(--text-strong); }
+.pf-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.pf-fade { transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out); }
+.pf-fade--off { opacity: 0; transform: translateY(4px); }
+
+/* Reduced motion: no LED boot, no caret, no blinks, no fades. */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation: none !important; transition-duration: 0ms !important; }
+	.ee-ruled__caret { display: none; }
+	.pf-fade--off { opacity: 1; transform: none; }
+}

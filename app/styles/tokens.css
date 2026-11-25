@@ -1,0 +1,158 @@
+/* EE Portfolio Design System — generated from tokens.json */
+:root, [data-theme="paper"] {
+  --black: #000000;
+  --ink-900: #0a0a0a;
+  --ink-800: #121212;
+  --ink-700: #1c1c1c;
+  --ink-600: #2a2a2a;
+  --ink-500: #3d3d3d;
+  --gray-500: #6e6e6e;
+  --gray-400: #989898;
+  --gray-300: #b4b4b4;
+  --gray-200: #d2d2d2;
+  --gray-100: #e6e6e6;
+  --gray-50: #f5f5f5;
+  --gray-75: #ededed;
+  --gray-150: #c2c1c6;
+  --white: #ffffff;
+  --white-led: #f8f8f8;
+  --led-red: #f83a30;
+  --led-red-dim: #3a0e0b;
+  --led-red-glow: rgba(248,58,48,.55);
+  --led-red-ink: #d42b21;
+  --pcb-green: #006830;
+  --pcb-green-lit: #1fcb6a;
+  --pcb-green-dim: #0b2a18;
+  --scrim: rgba(0,0,0,.72);
+  --surface-page: var(--white);
+  --surface-raised: var(--gray-50);
+  --surface-sunken: var(--gray-75);
+  --surface-inverse: var(--black);
+  --text-strong: var(--black);
+  --text-primary: var(--ink-900);
+  --text-muted: var(--gray-500);
+  --text-faint: #8e8e93;
+  --text-inverse: var(--white);
+  --text-accent: var(--led-red-ink);
+  --rule-hair: var(--gray-100);
+  --rule-strong: var(--black);
+  --accent: var(--led-red);
+  --accent-ink: var(--white);
+  --status-on: var(--pcb-green);
+  --status-warn: var(--led-red-ink);
+  --focus-ring: var(--black);
+  --link: var(--black);
+  --link-hover: var(--led-red-ink);
+  --placeholder-fill: var(--gray-50);
+  --placeholder-ink: var(--gray-500);
+  --led-bezel: var(--ink-900);
+  --shadow-none: none;
+  --glow-led: 0 0 6px rgba(248,58,48,.55),0 0 18px rgba(248,58,48,.25);
+  --glow-green: 0 0 6px rgba(31,203,106,.55);
+  --glow-accent: none;
+}
+[data-theme="chassis"] {
+  --surface-page: var(--black);
+  --surface-raised: var(--ink-800);
+  --surface-sunken: var(--ink-700);
+  --surface-inverse: var(--gray-200);
+  --text-strong: var(--white-led);
+  --text-primary: var(--gray-200);
+  --text-muted: var(--gray-400);
+  --text-faint: var(--gray-500);
+  --text-inverse: var(--black);
+  --text-accent: var(--led-red);
+  --rule-hair: var(--ink-500);
+  --rule-strong: var(--gray-200);
+  --accent: var(--led-red);
+  --accent-ink: var(--white);
+  --status-on: var(--pcb-green-lit);
+  --status-warn: var(--led-red);
+  --focus-ring: var(--white-led);
+  --link: var(--white-led);
+  --link-hover: var(--led-red);
+  --placeholder-fill: var(--ink-800);
+  --placeholder-ink: var(--gray-400);
+  --led-bezel: #00000000;
+  --glow-accent: 0 0 6px rgba(248,58,48,.55),0 0 18px rgba(248,58,48,.25);
+}
+:root {
+  --space-0: 0;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 96px;
+  --space-11: 128px;
+  --space-12: 192px;
+  --gutter: 16px;
+  --margin-page: 40px;
+  --control-h-sm: 28px;
+  --control-h-md: 36px;
+  --control-h-lg: 48px;
+  --radius-0: 0;
+  --radius-full: 999px;
+  --rule-w: 1px;
+  --rule-w-strong: 2px;
+  --container-max: 1600px;
+  --container-text: 640px;
+  --header-h: 112px;
+  --bar-h: 40px;
+  --z-base: 0;
+  --z-sticky: 10;
+  --z-overlay: 100;
+  --z-toast: 200;
+  --z-tooltip: 300;
+  --wdth-condensed: 75%;
+  --wdth-normal: 100%;
+  --wdth-expanded: 125%;
+  --weight-thin: 200;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --size-11: 11px;
+  --size-12: 12px;
+  --size-13: 13px;
+  --size-14: 14px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-48: 48px;
+  --size-64: 64px;
+  --size-96: 96px;
+  --size-144: 144px;
+  --leading-tight: .92;
+  --leading-snug: 1.1;
+  --leading-body: 1.45;
+  --leading-loose: 1.6;
+  --tracking-tight: -.01em;
+  --tracking-none: 0;
+  --tracking-label: .04em;
+  --tracking-wide: .08em;
+  --font-sans: "Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono: "IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --font-led: "DSEG7 Classic","IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --font-led-alpha: "DSEG14 Classic","IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+.ee-display { font-family: var(--font-sans); font-size: 96px; line-height: 0.92; font-weight: 400; letter-spacing: -0.01em; }
+.ee-headline { font-family: var(--font-sans); font-size: 48px; line-height: 0.92; font-weight: 400; }
+.ee-title { font-family: var(--font-sans); font-size: 24px; line-height: 1.1; font-weight: 300; }
+.ee-nav { font-family: var(--font-sans); font-size: 20px; line-height: 1; font-weight: 300; }
+.ee-prose { font-family: var(--font-sans); font-size: 18px; line-height: 1.45; font-weight: 300; }
+.ee-body { font-family: var(--font-sans); font-size: 16px; line-height: 1.45; font-weight: 300; }
+.ee-label { font-family: var(--font-mono); font-size: 12px; line-height: 1.2; font-weight: 400; letter-spacing: 0.04em; }
+.ee-micro { font-family: var(--font-mono); font-size: 11px; line-height: 1.3; letter-spacing: 0.04em; }
+@font-face { font-family: "Archivo"; src: url("/fonts/Archivo-Variable.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("/fonts/IBMPlexMono-300.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("/fonts/IBMPlexMono-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("/fonts/IBMPlexMono-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "DSEG7 Classic"; src: url("/fonts/DSEG7Classic-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "DSEG7 Classic"; src: url("/fonts/DSEG7Classic-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "DSEG14 Classic"; src: url("/fonts/DSEG14Classic-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }

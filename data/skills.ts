@@ -1,34 +1,49 @@
+export type SkillCategory = 'technical' | 'software' | 'embedded' | 'soft';
+
+/** Skills are listed as plain tags grouped by category. No ratings. */
 export type Skill = {
 	name: string;
-	level: number; // 1-10
-	category: 'technical' | 'software' | 'soft' | 'language';
+	category: SkillCategory;
+};
+
+export const skillCategoryLabels: Record<SkillCategory, string> = {
+	technical: 'design tools & lab',
+	software: 'software',
+	embedded: 'embedded',
+	soft: 'soft',
 };
 
 export const skills: Skill[] = [
 	// Technical Skills (Design Tools & Lab Equipment)
-	{ name: 'LTspice', level: 8, category: 'technical' },
-	{ name: 'Vivado', level: 7, category: 'technical' },
-	{ name: 'KiCad (Schematics/PCB)', level: 5, category: 'technical' },
-	{ name: 'Oscilloscope', level: 9, category: 'technical' },
-	{ name: 'Soldering', level: 8, category: 'technical' },
+	{ name: 'LTspice', category: 'technical' },
+	{ name: 'Vivado', category: 'technical' },
+	{ name: 'KiCad (Schematics/PCB)', category: 'technical' },
+	{ name: 'Oscilloscope', category: 'technical' },
+	{ name: 'Soldering', category: 'technical' },
 
 	// Software/Programming Skills
-	{ name: 'C++', level: 8, category: 'software' },
-	{ name: 'Verilog', level: 7, category: 'software' },
-	{ name: 'Python', level: 8, category: 'software' },
-	{ name: 'Go', level: 7, category: 'software' },
-	{ name: 'MATLAB', level: 6, category: 'software' },
-	{ name: 'LaTeX', level: 7, category: 'software' },
+	{ name: 'C++', category: 'software' },
+	{ name: 'Verilog', category: 'software' },
+	{ name: 'Python', category: 'software' },
+	{ name: 'Go', category: 'software' },
+	{ name: 'MATLAB', category: 'software' },
+	{ name: 'LaTeX', category: 'software' },
 
 	// Soft Skills
-	{ name: 'Project Management', level: 8, category: 'soft' },
-	{ name: 'Team Leadership', level: 8, category: 'soft' },
-	{ name: 'Problem Solving', level: 9, category: 'soft' },
-	{ name: 'Data Analytics', level: 7, category: 'soft' },
-	{ name: 'Automation', level: 8, category: 'soft' },
+	{ name: 'Project Management', category: 'soft' },
+	{ name: 'Team Leadership', category: 'soft' },
+	{ name: 'Problem Solving', category: 'soft' },
+	{ name: 'Data Analytics', category: 'soft' },
+	{ name: 'Automation', category: 'soft' },
 
-	// Embedded Systems (as language category for display)
-	{ name: 'Arduino', level: 9, category: 'language' },
-	{ name: 'Raspberry Pi', level: 8, category: 'language' },
-	{ name: 'ESP8266', level: 7, category: 'language' },
+	// Embedded Systems
+	{ name: 'Arduino', category: 'embedded' },
+	{ name: 'Raspberry Pi', category: 'embedded' },
+	{ name: 'ESP8266', category: 'embedded' },
 ];
+
+export const skillsByCategory = (Object.keys(skillCategoryLabels) as SkillCategory[]).map((category) => ({
+	category,
+	label: skillCategoryLabels[category],
+	skills: skills.filter((s) => s.category === category).map((s) => s.name),
+}));
