@@ -20,7 +20,7 @@ export function HomeHero() {
 	return (
 		<section style={{ padding: 'var(--space-9) var(--margin-page) var(--space-10)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 			<div style={{ width: 'min(600px,100%)', display: 'flex', flexDirection: 'column', gap: 'var(--space-8)' }}>
-				<RuledHeading lines={["Hi, I'm", 'Samuel', 'Phan']} size={64} style={{ fontSize: 'clamp(44px, 13vw, 64px)' }} animate />
+				<RuledHeading lines={["Hi! I'm", 'Samuel', 'Phan']} size={64} style={{ fontSize: 'clamp(44px, 13vw, 64px)' }} animate />
 				<RuledHeading
 					as="div"
 					lines={['Top 90%', 'Pickleball Player']}
@@ -46,7 +46,7 @@ export function HomeHero() {
 							<ButtonContent iconRight="arrow-right">View projects</ButtonContent>
 						</Link>
 						{siteConfig.cv && (
-							<a href={siteConfig.cv} className={buttonClass({ variant: 'secondary' })} target="_blank" rel="noopener">
+							<a href={siteConfig.cv} className={buttonClass({ variant: 'secondary' })} download>
 								<ButtonContent icon="download">CV</ButtonContent>
 							</a>
 						)}

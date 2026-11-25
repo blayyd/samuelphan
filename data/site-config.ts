@@ -12,11 +12,8 @@ export const siteConfig = {
 		(process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'https://samuelphan.vercel.app'),
 	/** Photo used on the home page and as the default share image. */
 	photo: '/photos/samuel-griffith-riso-v3.jpg',
-	/**
-	 * CV PDF for the download buttons. Left unset on purpose: the existing /resume.pdf prints an
-	 * email address and phone number. Set to a path under /public to show the buttons.
-	 */
-	cv: null as string | null,
+	/** CV PDF behind the download buttons. Set to null to hide them. */
+	cv: '/resume.pdf' as string | null,
 	links: {
 		github: 'https://github.com/blayyd',
 		githubHandle: 'blayyd',

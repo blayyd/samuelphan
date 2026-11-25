@@ -24,7 +24,7 @@ export function AboutTabs() {
 				controls="about-panel"
 				aside={
 					siteConfig.cv ? (
-						<a href={siteConfig.cv} className={buttonClass({ size: 'sm' })} target="_blank" rel="noopener">
+						<a href={siteConfig.cv} className={buttonClass({ size: 'sm' })} download>
 							<ButtonContent icon="download" size="sm">
 								CV
 							</ButtonContent>
