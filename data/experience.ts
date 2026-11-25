@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
 		company: 'OmniVision',
 		location: 'Santa Clara, CA',
 		startDate: 'Jun 2026',
-		endDate: 'Present',
+		endDate: 'Sep 2026',
 		description: [
 			'Identified 20+ implementation differences across Noise, Stream, BLE, and HBand automatic test scripts by comparing HQ and Belgium test flows, algorithms, parameters, and reporting differences',
 			'Validated script differences for product design teams by developing Python A/B tests, smoke tests, and unit tests',

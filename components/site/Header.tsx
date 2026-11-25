@@ -42,6 +42,8 @@ const NAV: NavItem[] = [
 ];
 
 const TZ = 'America/Los_Angeles';
+/** Must match the pf-wave animation duration in app/styles/site.css. */
+const TOWER_CYCLE_MS = 1200;
 
 function pacificClock(d: Date) {
 	const parts = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZoneName: 'short' }).formatToParts(d);
@@ -61,16 +63,31 @@ export function Header() {
 	}, []);
 
 	const [pulse, setPulse] = useState(false);
-	const stopRef = useRef(false);
+	// The radio-tower waves pulse while the nav is hovered. animationiteration does not fire reliably for
+	// SVG children, so the stop is timed: on leave, finish the current 1.2 s cycle, then turn the pulse off.
+	const pulseStart = useRef(0);
+	const stopTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+	useEffect(() => () => {
+		if (stopTimer.current) clearTimeout(stopTimer.current);
+	}, []);
 	const onEnter = () => {
-		stopRef.current = false;
-		setPulse(true);
+		if (stopTimer.current) {
+			clearTimeout(stopTimer.current);
+			stopTimer.current = null;
+		}
+		if (!pulse) {
+			pulseStart.current = performance.now();
+			setPulse(true);
+		}
 	};
 	const onLeave = () => {
-		stopRef.current = true;
-	};
-	const onCycle = () => {
-		if (stopRef.current) setPulse(false);
+		if (stopTimer.current) clearTimeout(stopTimer.current);
+		const elapsed = performance.now() - pulseStart.current;
+		const remaining = TOWER_CYCLE_MS - (elapsed % TOWER_CYCLE_MS);
+		stopTimer.current = setTimeout(() => {
+			stopTimer.current = null;
+			setPulse(false);
+		}, remaining);
 	};
 	const active = (href: string) => pathname === href || pathname.startsWith(href + '/');
 
@@ -88,7 +105,6 @@ export function Header() {
 							className={
 								'pf-nav__icon' + (active(n.href) ? ' pf-nav__icon--active' : '') + (n.icon === 'radio-tower' ? ' pf-tower' + (pulse ? ' pf-tower--on' : '') : '')
 							}
-							onAnimationIteration={n.icon === 'radio-tower' ? onCycle : undefined}
 						>
 							<Icon name={n.icon} size={44} stroke={1} />
 						</span>
