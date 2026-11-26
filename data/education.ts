@@ -9,6 +9,7 @@ export type Education = {
 	achievements: string[];
 };
 
+// Follows Samuel's resume (resume.tex), plus Foothill College. No coursework on the site.
 export const education: Education[] = [
 	{
 		degree: 'Bachelor of Science',
@@ -17,13 +18,8 @@ export const education: Education[] = [
 		location: 'Irvine, CA',
 		startDate: 'Sep 2025',
 		endDate: 'Expected Jun 2027',
-		gpa: '3.61/4.00',
-		achievements: [
-			'Electrical Engineering Scholarship, 2026-2027',
-			'Circuit Analysis II',
-			'Discrete Time-Signals & Systems',
-			'Intro to Digital Logic Design Lab',
-		],
+		gpa: '3.61/4.0',
+		achievements: ['Electrical Engineering Scholarship, 2026-2027'],
 	},
 	{
 		degree: 'Transfer Program',
@@ -33,9 +29,6 @@ export const education: Education[] = [
 		startDate: 'Sep 2023',
 		endDate: 'Jun 2025',
 		gpa: '3.82/4.00',
-		achievements: [
-			'Electrical Engineering Transfer Program',
-			'NASA Community College Aerospace Scholars (NCAS)',
-		],
+		achievements: ['NASA Community College Aerospace Scholars (NCAS)'],
 	},
 ];

@@ -8,19 +8,20 @@ export type Experience = {
 	technologies: string[];
 };
 
+// OmniVision and NASA follow Samuel's resume (resume.tex); SP Logistics is kept from the earlier site.
 export const experiences: Experience[] = [
 	{
 		title: 'CMOS Image Sensor Characterization Intern',
 		company: 'OmniVision',
 		location: 'Santa Clara, CA',
 		startDate: 'Jun 2026',
-		endDate: 'Present',
+		endDate: 'Sep 2026',
 		description: [
-			'Identified 20+ implementation differences across Noise, Stream, BLE, and HBand automatic test scripts by comparing HQ and Belgium test flows, algorithms, parameters, and reporting differences',
-			'Validated script differences for product design teams by developing Python A/B tests, smoke tests, and unit tests',
-			'Standardized RMS data aggregation and DN-to-electrons conversion methods by delivering 4 comparison reports',
+			'Developed Python A/B and smoke tests to compare sensor characterization scripts using identical hardware captures and frame replay',
+			'Analyzed 20+ implementation differences across 8 characterization workflows, tracing numerical discrepancies to measurement algorithms',
+			'Identified noise KPI aggregation and DN-to-electron conversion discrepancies, leading to fixes implemented in updated characterization scripts',
 		],
-		technologies: ['Python', 'Test Automation', 'CMOS Image Sensors', 'Data Analysis', 'Unit Testing'],
+		technologies: ['Python', 'Test Automation', 'CMOS Image Sensors', 'Data Analysis'],
 	},
 	{
 		title: 'Founder',
@@ -43,10 +44,9 @@ export const experiences: Experience[] = [
 		startDate: 'Jan 2025',
 		endDate: 'Apr 2025',
 		description: [
-			'Led research on mechanical systems and mobility solutions for a simulated lunar base, contributing to a team design reviewed by NASA staff',
-			'Advised team during meetings and provided feedback on budget decisions',
-			'Completed a 5-week online curriculum on NASA missions and STEM career pathways',
+			'Researched mechanical systems and mobility options for a simulated lunar base design reviewed by NASA staff',
+			'Advised a 13-member team on mechanical component budget decisions for the lunar base design',
 		],
-		technologies: ['Research', 'Team Leadership', 'Project Management', 'STEM'],
+		technologies: ['Research', 'Mechanical Systems', 'Team Leadership'],
 	},
 ];

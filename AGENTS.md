@@ -3,7 +3,7 @@
 ## Cursor Cloud specific instructions
 
 ### Product
-Single-product repository: a static **Next.js 15 (App Router) + TypeScript** personal portfolio website (Samuel Phan). Content is data-driven from files under `data/`. There is no backend, database, or environment variables — it is a fully client-rendered/static-export site (`output: 'export'` in `next.config.js`).
+Single-product repository: a **Next.js 15 (App Router) + TypeScript** personal portfolio website (Samuel Phan), styled with the EE Portfolio Design System (`app/styles/tokens.css`, `app/styles/bundle.css`, components in `components/ee/`). No Tailwind. Content is data-driven from files under `data/`. Deployed on Vercel (not a static export): `/projects` and `/about` render per request, and `/api/contact` is a route handler.
 
 ### Services
 There is only one service: the Next.js web app.
@@ -12,13 +12,14 @@ There is only one service: the Next.js web app.
 |------|---------|-------|
 | Dev server | `npm run dev` | http://localhost:3000 |
 | Lint | `npm run lint` | See caveat below |
-| Build | `npm run build` | Static export to `out/` |
+| Build | `npm run build` | Production build in `.next/` |
+| Type-check | `npm run type-check` | `tsc --noEmit` |
 | Serve prod build | `npm run start` | After `build` |
 
 Dependencies are installed with `npm install` (npm lockfile present). Requires Node 18+ (Node 22 works).
 
 ### Non-obvious caveats
-- `npm run lint` currently reports pre-existing `react/no-unescaped-entities` errors in `components/home/about-preview.tsx` and `components/home/hero-section.tsx`. These are unrelated to environment setup; the lint tooling itself works.
-- `npm run dev` prints harmless `Invalid next.config.js options detected` warnings (deprecated `devIndicators`/`experimental` keys). The server still starts and serves normally.
-- The README mentions `npm run type-check`, but no such script exists in `package.json` (only `dev`, `build`, `start`, `lint`).
-- The Contact form (`app/contact/page.tsx`) has no backend — on submit it opens a `mailto:` link and clears the fields. In a headless/VM browser this triggers an OS "choose mail application" dialog rather than sending mail; that is expected behavior, not a bug.
+- Owner rules: never render an email address or phone number in the site's pages (including meta tags and `mailto:`); the CV PDF behind the download buttons may contain them. No blue, no serif, no skill ratings, no ™. Contact goes through the form plus GitHub/LinkedIn.
+- The contact form posts to `app/api/contact/route.ts`, which sends through Resend. It needs `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`; without them it returns 503 and the form shows an honest "not connected" error.
+- Don't export plain values (constants, strings) from a `"use client"` module for use in server components; they arrive as client references. Shared values live in `lib/`.
+- Locally the Vercel Analytics script 404s (`/_vercel/insights/script.js`); that's expected off Vercel.

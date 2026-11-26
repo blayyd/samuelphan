@@ -1,35 +1,52 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import './styles/tokens.css';
+import './styles/bundle.css';
+import './styles/site.css';
+import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/next';
-
-import { ThemeProvider } from '@/components/theme-provider';
-import { Navbar } from '@/components/layout/navbar';
-import { Footer } from '@/components/layout/footer';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Header } from '@/components/site/Header';
+import { Footer } from '@/components/site/Footer';
+import { ThemeSwitch } from '@/components/site/ThemeSwitch';
+import { themeInitScript } from '@/lib/theme';
+import { ToastProvider } from '@/components/site/Toasts';
+import { siteConfig } from '@/data/site-config';
 
 export const metadata: Metadata = {
-	title: 'Samuel Phan - Portfolio',
-	description: 'Electrical Engineering student at UC Irvine with experience in embedded systems, automation, and robotics.',
+	metadataBase: new URL(siteConfig.url),
+	title: { default: 'samuel phan', template: '%s · samuel phan' },
+	description: siteConfig.description,
+	authors: [{ name: siteConfig.name }],
+	openGraph: {
+		type: 'website',
+		siteName: 'samuel phan',
+		locale: 'en_US',
+		images: [{ url: siteConfig.photo, width: 1152, height: 1536, alt: 'Samuel Phan' }],
+	},
+	twitter: { card: 'summary_large_image' },
 };
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+	themeColor: [
+		{ media: '(prefers-color-scheme: light)', color: '#ffffff' },
+		{ media: '(prefers-color-scheme: dark)', color: '#000000' },
+	],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en" className="relative" suppressHydrationWarning>
-			<link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/256/12539/12539811.png" type="image/x-icon" />
-			<body className={inter.className}>
-				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-					<div className="relative min-h-screen flex flex-col">
-						<Navbar />
-						<main className="flex-grow pt-16">{children}</main>
-						<Footer />
-					</div>
-				</ThemeProvider>
+		<html lang="en" suppressHydrationWarning>
+			<head>
+				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+			</head>
+			<body>
+				<a href="#main" className="pf-skip">
+					skip to content
+				</a>
+				<ToastProvider>
+					<Header />
+					{children}
+					<Footer />
+					<ThemeSwitch />
+				</ToastProvider>
 				<Analytics />
 			</body>
 		</html>

@@ -1,21 +1,17 @@
 /** @type {import('next').NextConfig} */
+const toAbout = (from, tab) => ({ source: from, destination: `/about?tab=${tab}`, permanent: true });
+
 const nextConfig = {
-	output: 'export',
-	eslint: {
-		ignoreDuringBuilds: true,
+	images: { formats: ['image/avif', 'image/webp'] },
+	async redirects() {
+		// Routes from the previous site, so old links and search results still land somewhere useful.
+		return [
+			toAbout('/experience', 'experience'),
+			toAbout('/education', 'education'),
+			toAbout('/skills', 'skills'),
+			toAbout('/certificates', 'certificates'),
+		];
 	},
-	devIndicators: false,
-	images: { unoptimized: true },
-	webpack: (config, { isServer }) => {
-		// Disable cache for both client and server builds
-		config.cache = false;
-		return config;
-	},
-	// Add experimental features to handle client pages properly
-	experimental: {
-		appDir: true,
-		serverActions: true
-	}
 };
 
 module.exports = nextConfig;
