@@ -83,7 +83,7 @@ export const projects: Project[] = [
 		captions: ['Rig c/o irvinehacks', 'Detection c/o edge impulse'],
 	},
 	{
-		title: 'Custom Ender 3 V2 (Klipper Build)',
+		title: 'Custom Ender 3 V2',
 		slug: 'custom-ender-3-v2',
 		category: '3d printing',
 		dates: 'Jan 2025 – Jun 2025',
@@ -100,7 +100,6 @@ export const projects: Project[] = [
 		],
 		stats: [['5', '× speed']],
 		role: 'Solo build',
-		headingLines: ['Custom', 'Ender 3 V2', 'Klipper Build'],
 		image: '/ender3.JPEG',
 		fit: 'cover',
 		tags: ['Klipper', 'Raspberry Pi', '3D Printing', 'Hardware'],
