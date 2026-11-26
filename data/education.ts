@@ -19,7 +19,7 @@ export const education: Education[] = [
 		startDate: 'Sep 2025',
 		endDate: 'Expected Jun 2027',
 		gpa: '3.61/4.0',
-		achievements: [],
+		achievements: ['Electrical Engineering Scholarship, 2026-2027'],
 	},
 	{
 		degree: 'Transfer Program',

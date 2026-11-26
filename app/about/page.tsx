@@ -24,7 +24,7 @@ export default function AboutPage() {
 			<div className="pf-grid-2" style={{ alignItems: 'end' }}>
 				<RuledHeading lines={['About', { text: 'Samuel', aside: ['est.', '2004'] }]} size={56} style={{ fontSize: 'clamp(40px, 11vw, 56px)' }} />
 				<p className="ee-prose" style={{ margin: 0, fontSize: 20, color: 'var(--text-strong)', maxWidth: 600 }}>
-					Senior electrical engineering student at UC Irvine, building a vision-guided 6-axis robotic arm for senior design. Most recently a CMOS image-sensor characterization intern at OmniVision; before that, NASA&apos;s NCAS program.
+					Senior electrical engineering student at UC Irvine. Most recently a CMOS image-sensor characterization intern at OmniVision; before that: a five-year e-commerce business, NASA&apos;s NCAS program, and a 6-axis robot arm.
 				</p>
 			</div>
 			<AboutTabs />
