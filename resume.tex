@@ -1,10 +1,10 @@
-\documentclass[11pt]{article}       % set main text size
+ \documentclass[11pt]{article}       % set main text size
 \usepackage[letterpaper,                % set paper size to letterpaper. change to a4paper for resumes outside of North America
 top=0.5in,                          % specify top page margin
 bottom=0.5in,                       % specify bottom page margin
 left=0.5in,                         % specify left page margin
 right=0.5in]{geometry}              % specify right page margin
-                       
+
 \usepackage{XCharter}               % set font. comment this line out if you want to use the default LaTeX font Computer Modern
 \usepackage[T1]{fontenc}            % output encoding
 \usepackage[utf8]{inputenc}         % input encoding
@@ -23,7 +23,19 @@ right=0.5in]{geometry}              % specify right page margin
 
 % format bullet points: size, white space above and below, white space between bullets
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
-\setlist[itemize]{itemsep=-2pt, leftmargin=12pt, topsep=7pt} %%% Test various topsep values to fix vertical spacing errors
+\setlist[itemize]{itemsep=1pt, leftmargin=12pt, topsep=5pt} %%% Test various topsep values to fix vertical spacing errors
+
+% ── resume content macros (resumeSubheading family) ──────────────────────
+% Required by extract-latex-content.mjs / patch-latex-content.mjs (career-ops
+% latex-tex flow). Rendered output is identical to the previous hand-rolled
+% \textbf{...} \hfill ... \\ layout that this file used before 2026-09-07.
+\newcommand{\resumeSubheading}[3]{\textbf{#1}{#2} \hfill #3 \\ \vspace{-9pt}}
+\newcommand{\resumeItem}[1]{\item #1}
+\newcommand{\resumeSubItem}[2]{\textbf{#1:} #2}
+% Coursework bullet: the italic "Relevant Coursework" label lives in the macro
+% (never patched); only the course list (second group of the empty-first-group
+% call) is an editable slot for the latex-tex tailoring flow.
+\newcommand{\resumeItemWithoutTitle}[2]{\item \textit{Relevant Coursework}: #2}
 
 % resume starts here
 \begin{document}
@@ -41,47 +53,43 @@ right=0.5in]{geometry}              % specify right page margin
 
 % education section
 \section*{Education}
-\textbf{University of California, Irvine} \hfill Expected June 2027 \\
-B.S. Electrical Engineering \\
+\textbf{University of California, Irvine} \hfill Expected Jun 2027 \\
+B.S. Electrical Engineering  \hfill GPA: 3.61/4.0 \\
+\vspace{-6.5pt}
+\begin{itemize}
+  \resumeItemWithoutTitle{}{Drones, Digital Signals Processing, Autonomous Systems}
+\end{itemize}
 % \vspace{-6.5pt}
-% \begin{itemize}
-%   \item \textit{Relevant Coursework}: Signals \& Systems, Autonomous Systems, Digital Logic Lab
-% \end{itemize}
-% \vspace{-6.5pt}
+% \textbf{Foothill College}   \hfill June 2025 \\
+% Electrical Engineering Transfer
 
 \vspace {-10pt}
 
 %experience section
 \section*{Experience}
-\textbf{CMOS Image Sensor Characterization Intern}{, Omnivision -- Santa Clara, CA} \hfill June 2026 -- Present \\
-\vspace{-9pt}
+\resumeSubheading{CMOS Image Sensor Characterization Intern}{, OMNIVISION -- Santa Clara, CA}{Jun 2026 -- Sep 2026}
 \begin{itemize}
-  \item Identified 20+ implementation differences across Noise, Stream, BLE, and HBand automatic test scripts by comparing HQ and Belgium test flows, algorithms, parameters, and reporting differences
-  \item Validated script differences for product design teams by developing Python A/B tests, smoke tests, and unit tests
-  \item Standardized RMS data aggregation and DN-to-electrons conversion methods by delivering 4 comparison reports
+  \resumeItem{Developed Python A/B and smoke tests to compare sensor characterization scripts using identical hardware captures and frame replay}
+  \resumeItem{Analyzed 20+ implementation differences across 8 characterization workflows, tracing numerical discrepancies to measurement algorithms}
+  \resumeItem{Identified noise KPI aggregation and DN-to-electron conversion discrepancies, leading to fixes implemented in updated characterization scripts}
 \end{itemize}
 
-\vspace{-10pt}
+\vspace{-\bigskipamount}
 
 %projects section
 \section*{Projects}
-\textbf{Arctos 6-Axis Robotic Arm} \hfill Jan 2026 -- Present \\
-
-\vspace{-9pt}
+\resumeSubheading{\href{https://github.com/kevinlycc/UnderWatch}{Elderly Fall Detection System}}{}{Feb 2026}
 \begin{itemize}
-  \item Led project management for a team of 7 members using Notion to track documentation, parts inventory, and project progress
-  \item Delivered 168 printed components within a strict 4kg material budget and ahead of deadline by optimizing strength-to-filament ratios with 4 walls, 15\% adaptive cubic infill and staggering print jobs
-  % \item Will integrate the Arduino Mega with the Hall effect sensors, Nema stepper motors, and 2209 stepper drivers to enable precise control of the robotic arm for lifting weights and stacking cups in a competition
-
+  \resumeItem{Trained an Edge Impulse classifier on 328 images with 83\% accuracy and inference latency under 12 ms}
+  \resumeItem{Integrated OpenCV webcam capture with an Arduino Uno Q to classify fall scenarios in real time at IrvineHacks}
+  \resumeItem{Deployed the classifier on Arduino Uno Q to process webcam images locally without cloud video uploads}
 \end{itemize}
 
 
-\textbf{\href{https://github.com/kevinlycc/UnderWatch}{Elderly Fall Detection System}} \hfill Feb 2026 \\
-\vspace{-9pt}
+\resumeSubheading{Vision-Guided 6-Axis Robotic Arm | Senior Design}{}{Sep 2026 -- Present}
 \begin{itemize}
-  \item Created a real-time fall detection system at IrvineHacks to alert caregivers, by integrating OpenCV with an Arduino Uno Q and a webcam
-  \item Detected falls with 83\% accuracy and under 12 ms latency by training an image classification model in Edge Impulse using 328 custom scenario images
-  \item Eliminated cloud processing requirements and ensured user privacy by deploying the machine learning model as edge AI on the Arduino Uno Q
+  \resumeItem{Developing vision-guided object retrieval with an Arctos 6-axis arm and on-device detection on Rubik Pi}
+  \resumeItem{Defining arm wiring and gripper requirements, plus tests for positioning accuracy and retrieval success}
 \end{itemize}
 
 % \textbf{Custom 3D Printer} \hfill Jan 2025 -- Jun 2025  \\
@@ -93,24 +101,33 @@ B.S. Electrical Engineering \\
 % \end{itemize}
 
 
-\textbf{\href{https://github.com/blayyd/dart-nike-gen/tree/main}{Nike Account Generator}} \hfill Feb 2021 -- Apr 2021 \\
-\vspace{-9pt}
+% SWAP 2026-09-17: replaced Nike Account Generator with Custom Ender 3 V2 (Klipper Build)
+% to surface CAD / fixture-design relevance for hardware & test roles (Apple camera
+% characterization lists "3D CAD mechanical design for fixtures is a plus").
+% Original Nike bullets retained below for reference:
+\resumeSubheading{Custom Ender 3 V2 (Klipper Build)}{}{Jan 2025 -- Jun 2025}
 \begin{itemize}
-  \item Developed a Chromium browser automation tool in Go to mass-generate Nike accounts, increasing raffle entry success compared to manual entry methods
-  \item Reduced total account generation time by 10x using goroutines in parallel for concurrent account creation
-  \item Ensured 100\% account uniqueness by integrating proxy rotation and SMS API verification
+  \resumeItem{Increased reliable print speed 5x by upgrading an Ender 3 V2 with a direct-drive extruder, all-metal hotend, TMC2209 mainboard, and Klipper firmware tuning}
+  \resumeItem{Configured Klipper pressure advance and input shaping to tune extrusion and compensate for vibration}
+  \resumeItem{Enabled remote printer monitoring through Klipper on a Raspberry Pi Zero 2 W}
+\end{itemize}
+
+\resumeSubheading{\href{https://github.com/blayyd/dart-nike-gen/tree/main}{Nike Account Generator}}{}{Feb 2021 -- Apr 2021}
+\begin{itemize}
+  \resumeItem{Built a Go tool to automate Nike account creation through Chromium browser automation}
+  \resumeItem{Accelerated account creation 10x by running browser automation tasks concurrently with Go goroutines}
+  \resumeItem{Integrated proxy rotation and SMS API verification into the account creation workflow}
 \end{itemize}
 
 
 \vspace{-10pt}
 
-% extracurriculars section
+% extracurriculars section (NCAS commented out 2026-10-05 to free a slot)
 \section*{Extracurriculars}
-\textbf{NASA Community College Aerospace Scholars (NCAS) Missions 1 \& 2 } \hfill Jan 2025 -- Apr 2025 \\
-\vspace{-9pt}
+\resumeSubheading{NASA Community College Aerospace Scholars (NCAS) Missions 1 \& 2 }{}{Jan 2025 -- Apr 2025}
 \begin{itemize}
-  \item Led research on mechanical systems and mobility solutions for a simulated lunar base, contributing to a team design reviewed by NASA staff
-  \item Advised 13-member team during meetings on budget decisions for mechanical components
+  \resumeItem{Researched mechanical systems and mobility options for a simulated lunar base design reviewed by NASA staff}
+  \resumeItem{Advised a 13-member team on mechanical component budget decisions for the lunar base design}
   % \item Completed a 5-week online curriculum on NASA missions and STEM career pathways
 \end{itemize}
 
@@ -118,9 +135,9 @@ B.S. Electrical Engineering \\
 
 % skills section
 \section*{Skills}
-\textbf{Programming:} Python, C++, Verilog, MATLAB, Go \\
-\textbf{Design Tools:} LTspice, Vivado, Fusion360 CAD \\
-\textbf{Embedded Systems:} Arduino, Raspberry Pi, ESP8266 \\
-\textbf{Miscellaneous:} Oscilloscope, Function Generator, Multimeter, Linux, ROS, Git
+\resumeSubItem{Programming}{Python, C++, Assembly, Verilog, MATLAB, Go} \\
+\resumeSubItem{Design Tools}{LTspice, Vivado, Fusion360 CAD} \\
+\resumeSubItem{Embedded Systems}{Arduino, Raspberry Pi, ESP8266} \\
+\resumeSubItem{Miscellaneous}{Oscilloscope, Function Generator, Multimeter, Linux, Git}
 
 \end{document}
