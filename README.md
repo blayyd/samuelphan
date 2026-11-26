@@ -1,248 +1,108 @@
-<div align="center">
+# samuel phan
 
-# 🚀 Engineering Student Portfolio
+Portfolio site for Samuel Phan, an electrical engineering student at UC Irvine. Live at [samuelphan.vercel.app](https://samuelphan.vercel.app).
 
-### *Next-Generation Portfolio Template for Tomorrow's Engineers*
+The site uses the EE Portfolio Design System: a white "paper" page (with a dark "chassis" theme), 1px rules, uppercase ruled headlines and red LED segment readouts.
 
-[![GitHub stars](https://img.shields.io/github/stars/niladri-1/Engineering_Student_Portfolio?style=for-the-badge&logo=github&color=yellow)](https://github.com/niladri-1/Engineering_Student_Portfolio/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/niladri-1/Engineering_Student_Portfolio?style=for-the-badge&logo=github&color=blue)](https://github.com/niladri-1/Engineering_Student_Portfolio/network)
-[![GitHub issues](https://img.shields.io/github/issues/niladri-1/Engineering_Student_Portfolio?style=for-the-badge&logo=github&color=red)](https://github.com/niladri-1/Engineering_Student_Portfolio/issues)
-[![License](https://img.shields.io/github/license/niladri-1/Engineering_Student_Portfolio?style=for-the-badge&logo=mit&color=green)](LICENSE)
+## Stack
 
-<br>
+- Next.js 15 (App Router), React, TypeScript
+- Plain CSS: design tokens and component styles, no Tailwind
+- Self-hosted fonts: Archivo, IBM Plex Mono, DSEG7 and DSEG14
+- Vercel for hosting and Web Analytics; Resend for the contact form
 
-*A sleek, responsive, and futuristic portfolio template crafted for engineering students to showcase their innovation, technical prowess, and groundbreaking projects. Built with cutting-edge web technologies for the digital age.*
+## Running it
 
-<br>
-
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Click_Here-ff69b4?style=for-the-badge)](https://your-portfolio-demo.vercel.app)
-[![Documentation](https://img.shields.io/badge/📚_Documentation-Read_Now-blue?style=for-the-badge)](https://github.com/niladri-1/Engineering_Student_Portfolio/wiki)
-
-</div>
-
----
-
-## ✨ **Core Features**
-
-<div align="center">
-
-| 🎯 **Feature** | 🔧 **Technology** | 📊 **Status** |
-|:---|:---|:---:|
-| **Responsive Design** | CSS Grid + Flexbox | ✅ Active |
-| **Modern Architecture** | Next.js 14 + App Router | ✅ Active |
-| **Type Safety** | TypeScript 5.0+ | ✅ Active |
-| **Styling Framework** | Tailwind CSS 3.0+ | ✅ Active |
-| **Component Library** | Custom React Components | ✅ Active |
-| **Performance Optimization** | Next.js Image + SSG | ✅ Active |
-| **Contact Integration** | Form Handling + API Routes | ✅ Active |
-| **SEO Optimized** | Meta Tags + Structured Data | ✅ Active |
-
-</div>
-
----
-
-## 🛠️ **Technology Stack**
-
-<div align="center">
-
-### **Frontend Technologies**
-![Next.js](https://img.shields.io/badge/Next.js-14.0+-black?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-### **Development Tools**
-![ESLint](https://img.shields.io/badge/ESLint-8.0+-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
-![PostCSS](https://img.shields.io/badge/PostCSS-8.0+-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white)
-![Git](https://img.shields.io/badge/Git-2.40+-F05032?style=for-the-badge&logo=git&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-Recommended-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-
-</div>
-
----
-
-## 📁 **Project Architecture**
-
-
-```
-engineer_portfolio/
-├─ app/
-│  ├─ about/
-│  ├─ certificates/
-│  ├─ contact/
-│  ├─ education/
-│  ├─ experience/
-│  ├─ projects/
-│  ├─ skills/
-│  ├─ globals.css
-│  ├─ layout.tsx
-│  └─ page.tsx
-├─ components/
-│  ├─ home/
-│  │  ├─ about-preview.tsx
-│  │  ├─ contact-preview.tsx
-│  │  ├─ hero-section.tsx
-│  │  ├─ projects-preview.tsx
-│  │  └─ skills-preview.tsx
-│  ├─ layout/
-│  │  ├─ footer.tsx
-│  │  └─ navbar.tsx
-│  ├─ ui/               # Reusable UI elements
-│  │  ├─ [~50+ custom components like accordion, button, card, toast, etc.]
-│  └─ theme-provider.tsx
-├─ hooks/
-│  └─ use-toast.ts
-├─ lib/
-│  ├─ constants.ts
-│  ├─ motion.ts
-│  └─ utils.ts
-├─ .eslintrc.json
-├─ .gitignore
-├─ components.json
-├─ next-env.d.ts
-├─ next.config.js
-├─ package-lock.json
-├─ package.json
-├─ postcss.config.js
-├─ tailwind.config.ts
-├─ tsconfig.json
-└─ README.md
-
-```
-
-
----
-
-## 🚀 **Quick Start Guide**
-
-<div align="center">
-
-### **Prerequisites**
-![Node.js](https://img.shields.io/badge/Node.js-18.0+-339933?style=flat-square&logo=node.js&logoColor=white)
-![npm](https://img.shields.io/badge/npm-9.0+-CB3837?style=flat-square&logo=npm&logoColor=white)
-![Git](https://img.shields.io/badge/Git-Latest-F05032?style=flat-square&logo=git&logoColor=white)
-
-</div>
-
-### **Installation Steps**
+Requires Node 18 or newer.
 
 ```bash
-# 1️⃣ Clone the repository
-git clone https://github.com/niladri-1/Engineering_Student_Portfolio.git
-
-# 2️⃣ Navigate to project directory
-cd Engineering_Student_Portfolio
-
-# 3️⃣ Install dependencies
 npm install
-
-# 4️⃣ Start development server
-npm run dev
-
-# 5️⃣ Open in browser
-# Navigate to http://localhost:3000
 ```
 
----
+```bash
+npm run dev
+```
 
-## 🎨 **Customization Guide**
+The dev server runs at http://localhost:3000.
 
-<div align="center">
+| Command | What it does |
+|---|---|
+| `npm run dev` | Development server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run type-check` | TypeScript, no output |
 
-| 🔧 **Component** | 📍 **Location** | 🎯 **Purpose** |
-|:---|:---|:---|
-| **Personal Info** | `app/page.tsx` | Update your details and bio |
-| **Project Gallery** | `components/Projects.tsx` | Showcase your engineering projects |
-| **Styling Theme** | `tailwind.config.ts` | Customize colors and design |
-| **Static Assets** | `public/` | Replace with your images/icons |
-| **Contact Form** | `components/Contact.tsx` | Configure contact information |
+## Pages
 
-</div>
+| Route | Content |
+|---|---|
+| `/` | Ruled hero, "about me" strip, photo and a short spec table |
+| `/projects` | Project grid with a category filter; `?cat=robotics` links to one category |
+| `/projects/[slug]` | Case study: stats, images, specs, feature list, next project |
+| `/about` | Experience, education, skills and certificates tabs; `?tab=education` links to one tab |
+| `/contact` | Contact form plus GitHub and LinkedIn |
 
----
+The old `/experience`, `/education`, `/skills` and `/certificates` URLs redirect to the matching About tab (see `next.config.js`). The site also serves `sitemap.xml` and `robots.txt`.
 
-## 📊 **Performance Metrics**
+## Editing content
 
-<div align="center">
+All content lives in `data/`:
 
-| 📈 **Metric** | 🎯 **Score** | 🏆 **Status** |
-|:---|:---:|:---:|
-| **Lighthouse Performance** | 98/100 | 🟢 Excellent |
-| **Accessibility** | 100/100 | 🟢 Perfect |
-| **Best Practices** | 100/100 | 🟢 Perfect |
-| **SEO** | 100/100 | 🟢 Perfect |
-| **First Contentful Paint** | < 1.2s | 🟢 Fast |
-| **Largest Contentful Paint** | < 2.5s | 🟢 Fast |
+| File | Holds |
+|---|---|
+| `data/projects.ts` | Projects: title, category, dates, intro, feature points, LED stats, tags, images and links |
+| `data/experience.ts` | Jobs and programs, with bullets and tags |
+| `data/education.ts` | Schools, GPA and highlights |
+| `data/skills.ts` | Skills as plain tags, grouped by category |
+| `data/certificates.ts` | Certificates, linked to PDFs in `public/` |
+| `data/site-config.ts` | Name, site URL, photo, CV path, GitHub and LinkedIn links |
 
-</div>
+Images and PDFs go in `public/`. The CV buttons download whatever `siteConfig.cv` points to (currently `/resume.pdf`); set it to `null` to hide them. `resume.tex` is the LaTeX source for `public/resume.pdf`.
 
----
+If a project title is too long for the heading on its page, set `headingLines` in `data/projects.ts` to choose where it breaks.
 
-## 📦 **Available Scripts**
+## Code layout
 
-<div align="center">
+```
+app/                 routes, layout, metadata, sitemap and robots
+app/api/contact/     contact form route handler
+app/styles/          tokens.css, bundle.css (design system) and site.css (page layout)
+components/ee/       design-system components (Button, LedDisplay, RuledHeading, Tabs, ...)
+components/site/     site pieces (header, footer, grids, tabs, contact form, theme switch, toasts)
+data/                content
+lib/                 shared helpers and constants
+public/              images, fonts, PDFs
+```
 
-| 🖥️ **Command** | 🎯 **Description** |
-|:---|:---|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint checks |
-| `npm run type-check` | Run TypeScript checks |
+Don't export plain values (strings, arrays) from a `"use client"` file for use in server components: they arrive as references, not values. Put shared values in `lib/`.
 
-</div>
+## Contact form
 
----
+The form posts to `/api/contact`, which sends the message through [Resend](https://resend.com). It rejects submissions that fill a hidden honeypot field or arrive less than 3 seconds after the page loads, and it limits each visitor to 5 messages per 10 minutes. That limit is per server instance, so treat it as best effort.
 
-## 🤝 **Contributing**
+Set these in Vercel under Settings → Environment Variables:
 
-<div align="center">
+| Variable | Value |
+|---|---|
+| `RESEND_API_KEY` | Resend API key |
+| `CONTACT_TO_EMAIL` | Inbox that receives messages; a comma-separated list works |
+| `CONTACT_FROM_EMAIL` | Sender address on a domain verified in Resend |
+| `NEXT_PUBLIC_SITE_URL` | Optional canonical origin; defaults to the Vercel production domain |
 
-We welcome contributions from the engineering community!
+Without the first three, the form tells visitors it isn't connected and that nothing was sent. It only shows "Message sent" after Resend accepts the message.
 
-[![Contributors](https://img.shields.io/github/contributors/niladri-1/Engineering_Student_Portfolio?style=for-the-badge&logo=github)](https://github.com/niladri-1/Engineering_Student_Portfolio/graphs/contributors)
-[![Pull Requests](https://img.shields.io/github/issues-pr/niladri-1/Engineering_Student_Portfolio?style=for-the-badge&logo=github)](https://github.com/niladri-1/Engineering_Student_Portfolio/pulls)
+## Site rules
 
-[📋 Contributing Guidelines](CONTRIBUTING.md) • [🐛 Report Bug](https://github.com/niladri-1/Engineering_Student_Portfolio/issues/new?assignees=&labels=bug&template=bug_report.md) • [💡 Request Feature](https://github.com/niladri-1/Engineering_Student_Portfolio/issues/new?assignees=&labels=enhancement&template=feature_request.md)
+- No email address or phone number anywhere in the pages, meta tags or links. Contact goes through the form, GitHub and LinkedIn. The downloadable CV may contain them.
+- No skill ratings or proficiency bars.
+- No blue, no serif type, no ™.
+- No project grid on the home page.
 
-</div>
+## Deploying
 
----
+Vercel builds every push. Pull requests get a preview deployment, and merging to `main` deploys to production.
 
-## 📄 **License**
+## Credits
 
-<div align="center">
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-</div>
-
----
-
-## 📞 **Contact & Connect**
-
-<div align="center">
-
-### **Niladri Chatterjee**
-*Full Stack Developer & Engineering Student*
-
-<br>
-
-[![Email](https://img.shields.io/badge/📧_Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:code.niladri@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/niladri1)
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://niladri1.vercel.app)
-[![GitHub](https://img.shields.io/badge/🐱_GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/niladri-1)
-
-<br>
-
-*"Building the future, one line of code at a time"*
-
----
-
-⭐ **If this project helped you, please consider giving it a star!** ⭐
-
-[![Star this repo](https://img.shields.io/github/stars/niladri-1/Engineering_Student_Portfolio?style=social)](https://github.com/niladri-1/Engineering_Student_Portfolio)
-
-</div>
+Icons are a subset of [Lucide](https://lucide.dev) (ISC licence). Archivo, IBM Plex Mono and DSEG are under the SIL Open Font License.
