@@ -41,8 +41,8 @@ export function AboutTabs() {
 									<span className="ee-micro">
 										{e.startDate} — {e.endDate}
 									</span>
-									<h3 className="ee-nav" style={{ margin: 0, fontSize: 28, color: 'var(--text-strong)', lineHeight: 1.05 }}>
-										{e.company.toLowerCase()}
+									<h3 className="ee-nav" style={{ margin: 0, fontSize: 28, color: 'var(--text-strong)', lineHeight: 1.05, textTransform: 'none' }}>
+										{e.company}
 									</h3>
 									<span style={{ fontSize: 15, color: 'var(--text-muted)' }}>
 										{e.title} · {e.location}
@@ -79,8 +79,8 @@ export function AboutTabs() {
 							<div key={ed.institution} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
 								<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 16, borderBottom: '1px solid var(--rule-strong)', paddingBottom: 12 }}>
 									<div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-										<h3 className="ee-nav" style={{ margin: 0, fontSize: 28, color: 'var(--text-strong)' }}>
-											{ed.institution.toLowerCase()}
+										<h3 className="ee-nav" style={{ margin: 0, fontSize: 28, color: 'var(--text-strong)', textTransform: 'none' }}>
+											{ed.institution}
 										</h3>
 										<span style={{ fontSize: 15, color: 'var(--text-muted)' }}>
 											{ed.degree}, {ed.field}
