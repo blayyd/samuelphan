@@ -42,6 +42,32 @@ const NAV: NavItem[] = [
 ];
 
 const TZ = 'America/Los_Angeles';
+
+// Nav icons are sized so each drawn glyph spans the full height of the text column beside it
+// (24px label + 6px gap + three 13px sub-links at 1.3 line-height ≈ 81px). Lucide glyphs sit inside
+// a 24-unit box with some empty margin, so each icon is scaled by its own glyph extent and that
+// margin is trimmed with negative margins. The stroke is scaled down to keep lines ~1.8px.
+const NAV_TEXT_PX = 81;
+const NAV_STROKE_PX = 1.8;
+const GLYPH_BOX: Partial<Record<IconName, [x: number, y: number, w: number, h: number]>> = {
+	'circuit-board': [3, 3, 18, 18],
+	cpu: [2, 2, 20, 20],
+	'radio-tower': [2, 2, 20, 20],
+};
+
+function navIconProps(name: IconName) {
+	const [x, y, w, h] = GLYPH_BOX[name] ?? [2, 2, 20, 20];
+	const scale = NAV_TEXT_PX / h;
+	const size = 24 * scale;
+	return {
+		size,
+		stroke: NAV_STROKE_PX / scale,
+		style: {
+			display: 'block',
+			margin: `${-y * scale}px ${-(24 - x - w) * scale}px ${-(24 - y - h) * scale}px ${-x * scale}px`,
+		},
+	};
+}
 /** Must match the pf-wave animation duration in app/styles/site.css. */
 const TOWER_CYCLE_MS = 1200;
 
@@ -106,7 +132,7 @@ export function Header() {
 								'pf-nav__icon' + (active(n.href) ? ' pf-nav__icon--active' : '') + (n.icon === 'radio-tower' ? ' pf-tower' + (pulse ? ' pf-tower--on' : '') : '')
 							}
 						>
-							<Icon name={n.icon} size={44} stroke={1} />
+							<Icon name={n.icon} {...navIconProps(n.icon)} />
 						</span>
 						<div className="pf-nav__col">
 							<Link href={n.href} className={'ee-nav pf-nav__main' + (active(n.href) ? ' pf-nav__main--active' : '')} aria-current={pathname === n.href ? 'page' : undefined}>

@@ -18,7 +18,7 @@ img { max-width: 100%; }
 .pf-wordmark:hover { color: var(--text-strong); text-decoration: none; }
 .pf-nav { display: flex; gap: clamp(16px, 3.5vw, 64px); flex-wrap: nowrap; min-width: 0; }
 .pf-nav__item { display: flex; gap: var(--space-4); align-items: flex-start; }
-.pf-nav__icon { display: none; padding-top: 2px; color: var(--text-strong); }
+.pf-nav__icon { display: none; line-height: 0; color: var(--text-strong); }
 .pf-nav__icon--active { color: var(--accent); }
 .pf-nav__col { display: flex; flex-direction: column; gap: 6px; }
 .pf-nav__main { font-size: 24px; color: var(--text-strong); text-underline-offset: 5px; }
