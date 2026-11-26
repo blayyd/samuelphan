@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { LedDisplay, SpecTable, buttonClass, ButtonContent } from '@/components/ee';
 import { HomeHero } from '@/components/site/HomeHero';
-import { experiences } from '@/data/experience';
 import { siteConfig } from '@/data/site-config';
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-	const latest = experiences[0];
 	return (
 		<main id="main">
 			<HomeHero />
@@ -34,9 +32,9 @@ export default function HomePage() {
 						<SpecTable
 							rows={[
 								['Education', 'B.S. Electrical Engineering, UC Irvine — 2027'],
-								[latest.endDate === 'Present' ? 'Now' : 'Previously', 'CMOS image sensor intern, OmniVision'],
+								['Now', 'Senior design: vision-guided 6-axis robotic arm'],
+								['Previously', 'CMOS image sensor intern, OmniVision'],
 								['Also', 'NASA Community College Aerospace Scholars'],
-								['Before that', 'Resold sneakers + more, 2019–2024'],
 							]}
 						/>
 						<div>

@@ -1,4 +1,4 @@
-export type SkillCategory = 'technical' | 'software' | 'embedded' | 'soft';
+export type SkillCategory = 'programming' | 'design' | 'embedded' | 'misc';
 
 /** Skills are listed as plain tags grouped by category. No ratings. */
 export type Skill = {
@@ -7,39 +7,35 @@ export type Skill = {
 };
 
 export const skillCategoryLabels: Record<SkillCategory, string> = {
-	technical: 'design tools & lab',
-	software: 'software',
-	embedded: 'embedded',
-	soft: 'soft',
+	programming: 'programming',
+	design: 'design tools',
+	embedded: 'embedded systems',
+	misc: 'miscellaneous',
 };
 
+// Follows Samuel's resume (resume.tex), plus Soldering.
 export const skills: Skill[] = [
-	// Technical Skills (Design Tools & Lab Equipment)
-	{ name: 'LTspice', category: 'technical' },
-	{ name: 'Vivado', category: 'technical' },
-	{ name: 'KiCad (Schematics/PCB)', category: 'technical' },
-	{ name: 'Oscilloscope', category: 'technical' },
-	{ name: 'Soldering', category: 'technical' },
+	{ name: 'Python', category: 'programming' },
+	{ name: 'C++', category: 'programming' },
+	{ name: 'Assembly', category: 'programming' },
+	{ name: 'Verilog', category: 'programming' },
+	{ name: 'MATLAB', category: 'programming' },
+	{ name: 'Go', category: 'programming' },
 
-	// Software/Programming Skills
-	{ name: 'C++', category: 'software' },
-	{ name: 'Verilog', category: 'software' },
-	{ name: 'Python', category: 'software' },
-	{ name: 'Go', category: 'software' },
-	{ name: 'MATLAB', category: 'software' },
-	{ name: 'LaTeX', category: 'software' },
+	{ name: 'LTspice', category: 'design' },
+	{ name: 'Vivado', category: 'design' },
+	{ name: 'Fusion360 CAD', category: 'design' },
 
-	// Soft Skills
-	{ name: 'Project Management', category: 'soft' },
-	{ name: 'Team Leadership', category: 'soft' },
-	{ name: 'Problem Solving', category: 'soft' },
-	{ name: 'Data Analytics', category: 'soft' },
-	{ name: 'Automation', category: 'soft' },
-
-	// Embedded Systems
 	{ name: 'Arduino', category: 'embedded' },
 	{ name: 'Raspberry Pi', category: 'embedded' },
 	{ name: 'ESP8266', category: 'embedded' },
+
+	{ name: 'Oscilloscope', category: 'misc' },
+	{ name: 'Function Generator', category: 'misc' },
+	{ name: 'Multimeter', category: 'misc' },
+	{ name: 'Soldering', category: 'misc' },
+	{ name: 'Linux', category: 'misc' },
+	{ name: 'Git', category: 'misc' },
 ];
 
 export const skillsByCategory = (Object.keys(skillCategoryLabels) as SkillCategory[]).map((category) => ({

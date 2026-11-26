@@ -4,8 +4,9 @@ export type Project = {
 	title: string;
 	slug: string;
 	category: ProjectCategory;
+	/** When it ran, as on the resume, e.g. "Jan 2025 – Jun 2025". */
+	dates: string;
 	description: string;
-	content?: string;
 	/** One-paragraph case-study intro (first person, lab-notebook voice). */
 	intro: string;
 	/** Feature list, shown as an LED-numbered index. */
@@ -13,10 +14,12 @@ export type Project = {
 	/** Measured claims shown as LED readouts: [value, unit label]. */
 	stats: Array<[string, string]>;
 	role: string;
+	/** Optional line breaks for the ruled title on the project page; defaults to splitting the title in half. */
+	headingLines?: string[];
 	image: string;
 	/** object-fit for the image: contain for renders, cover for photos. */
 	fit: 'cover' | 'contain';
-	/** Black pill badge over the card image, e.g. "team lead". */
+	/** Black pill badge over the card image, e.g. "senior design". */
 	badge?: string;
 	tags: string[];
 	link?: string;
@@ -27,114 +30,96 @@ export type Project = {
 	captions?: string[];
 };
 
+// Content follows Samuel's resume (resume.tex).
 export const projects: Project[] = [
 	{
-		title: 'Arctos 6-Axis Robotic Arm',
+		title: 'Vision-Guided 6-Axis Robotic Arm',
 		slug: 'arctos-robotic-arm',
 		category: 'robotics',
-		intro:
-			'A high-precision motion-control and mechanical-design project. As project lead I coordinated a multidisciplinary team of 7 to design, 3D print and assemble a 600 mm tall arm, with custom end effectors, driven by an Arduino Mega interfacing sensors and stepper motors.',
-		points: ['3D-printed structural integrity for payload', 'Inverse kinematics for smooth movement', 'ROS2 control and simulation', 'Custom end effector'],
-		stats: [['6', 'axes'], ['600', 'mm'], ['7', 'team']],
-		role: 'Project lead',
-		fit: 'contain',
-		badge: 'team lead',
+		dates: 'Sep 2026 – Present',
 		description:
-			'Leading project management for a team of 7 members to build a 600mm tall robotic arm with 3D printed parts and custom end effector. Programming Arduino Mega with Arctos Studio/ROS2 to interface with sensors, motors, and control electronics.',
-		content: `
-			The Arctos 6-Axis Robotic Arm is a sophisticated engineering project focused on high-precision motion control and mechanical design. 
-			As the project lead, I coordinated a multidisciplinary team of 7 members to design, 3D print, and assemble a 600mm tall robotic arm.
-			
-			Key challenges included:
-			- Optimizing 3D printed structural integrity for payload capacity.
-			- Implementing inverse kinematics for smooth movement.
-			- Integrating ROS2 for advanced control and simulation.
-			
-			The arm features custom-designed end effectors and is powered by an Arduino Mega interfacing with various sensors and stepper motors.
-		`,
+			'Senior design project: vision-guided object retrieval with an Arctos 6-axis robotic arm and on-device detection on a Rubik Pi.',
+		intro:
+			'My senior design project. I am developing vision-guided object retrieval with an Arctos 6-axis arm, with object detection running on-device on a Rubik Pi. I am also defining the arm wiring, the gripper requirements, and the tests for positioning accuracy and retrieval success.',
+		points: [
+			'Vision-guided object retrieval',
+			'On-device detection on Rubik Pi',
+			'Arm wiring and gripper requirements',
+			'Tests for positioning accuracy and retrieval success',
+		],
+		stats: [['6', 'axes']],
+		role: 'Senior design',
+		headingLines: ['Vision-Guided', '6-Axis', 'Robotic Arm'],
 		image: '/arctos.png',
-		tags: ['Arduino', 'ROS2', '3D Printing', 'Robotics', 'Project Management'],
+		fit: 'contain',
+		badge: 'senior design',
+		tags: ['Robotics', 'Computer Vision', 'Rubik Pi', 'Edge AI'],
 	},
 	{
 		title: 'UnderWatch',
 		slug: 'underwatch',
 		category: 'embedded',
+		dates: 'Feb 2026',
+		description:
+			'Elderly fall detection system built at IrvineHacks 2026. An Edge Impulse classifier trained on 328 images reached 83% accuracy with inference under 12 ms, running locally on an Arduino Uno Q.',
 		intro:
-			'A fall-detection system built at IrvineHacks 2026, using local edge AI and computer vision. I programmed the Arduino Uno Q to talk to the USB webcam, trained the model in Edge Impulse, and integrated it into one working unit.',
-		points: ['Custom image-classification model, 83\u00a0% accuracy', 'Real-time confidence scoring', 'Local edge processing for privacy and speed'],
-		stats: [['83', '% acc.']],
+			'An elderly fall-detection system built at IrvineHacks 2026. I trained an Edge Impulse classifier on 328 images, integrated OpenCV webcam capture with an Arduino Uno Q to classify fall scenarios in real time, and deployed the model on the board so webcam images are processed locally, with no cloud video uploads.',
+		points: [
+			'Edge Impulse classifier, 328 images, 83\u00a0% accuracy',
+			'Inference latency under 12 ms',
+			'OpenCV webcam capture on Arduino Uno Q',
+			'Local processing, no cloud video uploads',
+		],
+		stats: [['83', '% acc.'], ['12', 'ms max'], ['328', 'images']],
 		role: 'Embedded + ML',
+		image: '/underwatch.png',
 		fit: 'cover',
 		badge: 'irvinehacks',
-		captions: ['Rig c/o irvinehacks', 'Detection c/o edge impulse'],
-		description:
-			'Elder monitoring system that uses local edge AI and Computer Vision built at IrvineHacks 2026. Uses an image categorization ML model that reached an accuracy of 83%. Uses confidence scoring for fall detection.',
-		content: `
-			UnderWatch is a fall detection system built at IrvineHacks 2026, leveraging local edge AI and Computer Vision to enhance safety and autonomy.
-			
-			Key features include:
-			- Custom-trained image categorization ML model with 83% accuracy.
-			- Real-time confidence scoring for reliable fall detection.
-			- Local edge processing for privacy and speed.
-			
-			My contributions included programming the Arduino Uno Q to connect to the USB webcam, training the ML model using Edge Impulse, and integrating the system into a cohesive solution for elder monitoring.
-		`,
-		image: '/underwatch.png',
-		tags: ['Edge AI', 'Computer Vision', 'Machine Learning', 'Arduino', 'Python'],
+		tags: ['Edge AI', 'Computer Vision', 'Edge Impulse', 'OpenCV', 'Arduino'],
 		link: 'https://devpost.com/software/ai-gf',
 		linkLabel: 'DevPost',
 		repo: 'https://github.com/kevinlycc/UnderWatch',
 		gallery: ['/underwatch_example.jpg'],
+		captions: ['Rig c/o irvinehacks', 'Detection c/o edge impulse'],
 	},
 	{
-		title: 'Custom Ender 3 V2',
+		title: 'Custom Ender 3 V2 (Klipper Build)',
 		slug: 'custom-ender-3-v2',
 		category: '3d printing',
-		intro: 'A complete overhaul of a stock Creality Ender 3 V2. The result: 5× reliable print speed at better quality than stock settings.',
-		points: ['Direct-drive extruder conversion', 'All-metal hotend', 'Silent mainboard, TMC2209 drivers', 'Raspberry Pi 4 running Klipper', 'Pressure advance + input shaping'],
-		stats: [['5', '× speed'], ['4', 'upgrades'], ['0', 'downtime']],
-		role: 'Solo build',
-		fit: 'cover',
+		dates: 'Jan 2025 – Jun 2025',
 		description:
-			'Boosted print speed 5x over stock performance by modifying a Creality Ender 3 V2 with upgraded hotend, extruder, and mainboard. Integrated Raspberry Pi running Klipper firmware for remote monitoring and zero downtime.',
-		content: `
-			This project involved a complete overhaul of a standard Creality Ender 3 V2 to achieve professional-grade performance.
-			
-			Upgrades included:
-			- Direct drive extruder conversion for better flexible filament handling.
-			- All-metal hotend for high-temperature printing.
-			- Silent mainboard with TMC2209 drivers.
-			- Raspberry Pi 4 running Klipper firmware for pressure advance and input shaping.
-			
-			The result was a 500% increase in reliable print speeds while maintaining higher quality than stock settings.
-		`,
+			'Increased reliable print speed 5x by upgrading an Ender 3 V2 with a direct-drive extruder, all-metal hotend, TMC2209 mainboard and Klipper firmware tuning, with remote monitoring on a Raspberry Pi Zero 2 W.',
+		intro:
+			'An upgraded Creality Ender 3 V2: direct-drive extruder, all-metal hotend, TMC2209 mainboard and Klipper firmware. Tuning pressure advance and input shaping took reliable print speed to 5× stock, and a Raspberry Pi Zero 2 W runs Klipper for remote monitoring.',
+		points: [
+			'Direct-drive extruder',
+			'All-metal hotend',
+			'TMC2209 mainboard',
+			'Klipper pressure advance + input shaping',
+			'Remote monitoring on Raspberry Pi Zero 2 W',
+		],
+		stats: [['5', '× speed']],
+		role: 'Solo build',
+		headingLines: ['Custom', 'Ender 3 V2', 'Klipper Build'],
 		image: '/ender3.JPEG',
-		tags: ['Raspberry Pi', 'Klipper', 'CAD', '3D Printing', 'Hardware'],
+		fit: 'cover',
+		tags: ['Klipper', 'Raspberry Pi', '3D Printing', 'Hardware'],
 	},
 	{
-		title: 'Dart IO Nike Generator',
+		title: 'Nike Account Generator',
 		slug: 'dart-io-nike-generator',
 		category: 'software',
-		intro: 'A high-performance automation tool written in Go, designed for scale and speed.',
-		points: ['Concurrent generation with goroutines', 'Proxy rotation', 'SMS API phone verification', 'Headless browser automation'],
-		stats: [['10', '× faster'], ['100', '% unique']],
-		role: 'Solo build',
-		fit: 'cover',
+		dates: 'Feb 2021 – Apr 2021',
 		description:
-			'Developed a browser automation tool in Go to mass-generate Nike accounts, reducing total generation time by 10x using Go\'s concurrency features. Ensured 100% account uniqueness by integrating proxy rotation and SMS API verification.',
-		content: `
-			Dart IO is a high-performance automation tool built using Golang, specifically designed for scale and speed.
-			
-			Features:
-			- Concurrent generation using Go routines.
-			- Advanced proxy rotation to bypass rate limits.
-			- SMS API integration for automated phone verification.
-			- Headless browser automation for realistic user behavior.
-			
-			The tool successfully reduced account generation time significantly while ensuring high success rates and account longevity.
-		`,
+			'A Go tool that automates Nike account creation through Chromium browser automation, 10x faster with concurrent goroutines, with proxy rotation and SMS API verification.',
+		intro:
+			'A Go tool that automates Nike account creation through Chromium browser automation. Running the browser tasks concurrently with goroutines made account creation 10× faster, and proxy rotation and SMS API verification are built into the workflow.',
+		points: ['Chromium browser automation', 'Concurrent tasks with goroutines', 'Proxy rotation', 'SMS API verification'],
+		stats: [['10', '× faster']],
+		role: 'Solo build',
 		image: '/dart.jpg',
-		tags: ['Go', 'Automation', 'Concurrency', 'API Integration'],
+		fit: 'cover',
+		tags: ['Go', 'Concurrency', 'Browser Automation', 'API Integration'],
 		repo: 'https://github.com/blayyd/dart-nike-gen',
 	},
 ];

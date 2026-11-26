@@ -32,7 +32,8 @@ export default async function ProjectPage({ params }: Props) {
 	const next = projects[(i + 1) % projects.length];
 	const words = p.title.split(' ');
 	const lines: Array<string | RuledLine> = [{ text: 'EE/', strong: String(i + 1).padStart(2, '0') }];
-	if (words.length <= 2) lines.push(words.join(' '));
+	if (p.headingLines) lines.push(...p.headingLines);
+	else if (words.length <= 2) lines.push(words.join(' '));
 	else {
 		lines.push(words.slice(0, Math.ceil(words.length / 2)).join(' '));
 		lines.push(words.slice(Math.ceil(words.length / 2)).join(' '));
@@ -94,6 +95,7 @@ export default async function ProjectPage({ params }: Props) {
 					caption="Key specifications"
 					rows={[
 						['Category', p.category],
+						['Dates', p.dates],
 						['Role', p.role],
 						['Stack', p.tags.slice(0, 3).join(', ')],
 						...p.stats.map(([v, l]): [string, string] => [l, v]),

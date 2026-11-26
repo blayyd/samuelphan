@@ -92,7 +92,7 @@ export function AboutTabs() {
 									rows={[
 										['Dates', `${ed.startDate} — ${ed.endDate}`],
 										['Location', ed.location],
-										...ed.achievements.map((n, k): [string, string] => [k ? '' : 'Highlights', n]),
+										...ed.achievements.map((n, k): [string, string] => [k ? '' : 'Coursework', n]),
 									]}
 								/>
 							</div>
