@@ -4,8 +4,6 @@ export const siteConfig = {
 	name: 'Samuel Phan',
 	description:
 		'Electrical Engineering student at UC Irvine with experience in embedded systems, automation, and robotics.',
-	/** Short lowercase blurb used in the header. */
-	tagline: 'senior electrical engineering student at uc irvine with experience in embedded systems, automation, and robotics.',
 	/** Canonical origin; falls back to the Vercel production domain. */
 	url:
 		process.env.NEXT_PUBLIC_SITE_URL ||

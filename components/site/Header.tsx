@@ -156,7 +156,6 @@ export function Header() {
 				))}
 			</nav>
 			<div className="pf-header__aside">
-				<p className="ee-micro pf-header__blurb">{siteConfig.tagline}</p>
 				<LedDisplay value={clock ? clock.hhmm : '!!:!!'} ghost="88:88" labels={['local time', clock ? clock.zone : 'pt']} size={20} />
 			</div>
 		</header>

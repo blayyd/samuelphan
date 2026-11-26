@@ -28,9 +28,8 @@ img { max-width: 100%; }
 .pf-nav__sub a { color: var(--text-muted); }
 .pf-nav__sub a:hover { color: var(--link-hover); }
 .pf-header__aside { display: flex; gap: var(--space-6); align-items: flex-start; }
-.pf-header__blurb { display: none; margin: 0; max-width: 170px; line-height: 1.45; text-transform: none; letter-spacing: .02em; }
 @media (min-width: 1200px) {
-	.pf-nav__icon, .pf-header__blurb { display: block; }
+	.pf-nav__icon { display: block; }
 }
 @media (max-width: 720px) {
 	.pf-header { grid-template-columns: 1fr auto; row-gap: var(--space-6); padding-top: 20px; }
